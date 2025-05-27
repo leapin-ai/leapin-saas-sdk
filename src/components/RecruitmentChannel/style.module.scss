@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+}
+
+.channel-item {
+  box-shadow: 0 0 15px rgba(92, 92, 92, 0.1);
+  border-radius: 20px;
+  height: 90px;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.title {
+  background: var(--bg-color-grey-1);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
