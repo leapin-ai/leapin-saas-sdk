@@ -16,9 +16,9 @@
 - _Seek(@components/Seek)
 
 ```jsx
-const {default:Seek} = _Seek;
-const BaseExample = ()=>{
-    return <Seek />;
+const { default: Seek } = _Seek;
+const BaseExample = () => {
+  return <Seek />;
 };
 
 render(<BaseExample />);

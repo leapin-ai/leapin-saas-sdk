@@ -16,9 +16,9 @@
 - _RecruitmentChannel(@components/RecruitmentChannel)
 
 ```jsx
-const {default:RecruitmentChannel} = _RecruitmentChannel;
-const BaseExample = ()=>{
-    return <RecruitmentChannel />;
+const { default: RecruitmentChannel } = _RecruitmentChannel;
+const BaseExample = () => {
+  return <RecruitmentChannel />;
 };
 
 render(<BaseExample />);
