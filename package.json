@@ -1,7 +1,7 @@
 {
   "name": "@leapin-components/leapin-saas-sdk",
   "version": "0.1.0",
-  "description": "",
+  "description": "leapin-saas-sdk",
   "scripts": {
     "init": "husky",
     "start": "cross-env PORT=3010 MODULES_DEV_PUBLIC_URL=/ craco start",
