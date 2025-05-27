@@ -4,8 +4,9 @@ if (env.BRANCH_NAME == 'master') {
 }
 
 standardPipeline {
-    projectName = "ai-agent"
+    projectName = "leapin-saas-sdk"
     isMultiBranch = true
+    isWebService = true
     buildCommand = {
         sh "${build_command}"
     }
@@ -14,5 +15,6 @@ standardPipeline {
     }
     nodeVersion = "20.15.0"
     buildLocalPath = "build"
-    deployBranch = ['develop', 'master']
+    isSkipDeploy = true
+    isBuildUploadPathWithPackageJson = true
 }
