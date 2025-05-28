@@ -188,7 +188,7 @@ const Seek = createWithRemoteLoader({
         params: { leapinJobId: props.positionId }
       })}
       render={({ data, reload }) => {
-        if (data) {
+        if (data?.positionUri) {
           return <PositionDetail {...props} data={data} reload={reload} />;
         }
         return <CreatePosition {...props} reload={reload} />;
