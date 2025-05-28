@@ -1,6 +1,6 @@
 {
   "name": "@leapin-components/leapin-saas-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "leapin-saas-sdk",
   "scripts": {
     "init": "husky",
