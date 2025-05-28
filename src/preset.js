@@ -46,8 +46,8 @@ export const globalInit = async () => {
     }
   });
   const registry = {
-    url: 'https://uc.fatalent.cn',
-    tpl: '{{url}}/packages/@kne-components/{{remote}}/{{version}}/build'
+    url: 'https://cdn.leapin-ai.com',
+    tpl: '{{url}}/components/@kne-components/{{remote}}/{{version}}/build'
   };
 
   const componentsCoreRemote = {
@@ -63,6 +63,11 @@ export const globalInit = async () => {
         ...registry,
         remote: 'components-iconfont',
         defaultVersion: '0.2.1'
+      },
+      'components-ckeditor': {
+        ...registry,
+        remote: 'components-ckeditor',
+        defaultVersion: '0.2.5'
       },
       'leapin-saas-sdk':
         process.env.NODE_ENV === 'development'

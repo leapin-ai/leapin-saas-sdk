@@ -6,9 +6,9 @@ import Category from '../Category';
 import AdSelection from '../AdSelection';
 
 const PositionFormInner = createWithRemoteLoader({
-  modules: ['components-core:FormInfo', 'components-core:Global@usePreset']
+  modules: ['components-core:FormInfo', 'components-core:Global@usePreset', 'components-ckeditor:Editor']
 })(({ remoteModules, positionTitle }) => {
-  const [FormInfo, usePreset] = remoteModules;
+  const [FormInfo, usePreset, Editor] = remoteModules;
   const { useFormContext } = FormInfo;
   const { SuperSelect, RadioGroup, TextArea } = FormInfo.fields;
   const { apis } = usePreset();
@@ -20,7 +20,7 @@ const PositionFormInner = createWithRemoteLoader({
         <SuperSelect
           block
           name="account"
-          label="SEEK Account"
+          label="SEEK account"
           rule="REQ"
           single
           api={Object.assign({}, apis.seek.organizations, {
@@ -35,34 +35,34 @@ const PositionFormInner = createWithRemoteLoader({
             });
           }}
         />,
-        <TextArea name="summary" label="Job Summary" rule="REQ" maxLength={150} block />,
-        <TextArea name="detail" label="Job description" rule="REQ" block />,
-        <PayDetails name="salary" label="Salary" rule="REQ PAY_SALARY" block />,
+        <TextArea name="summary" label="Summary" rule="REQ" maxLength={150} block />,
+        <Editor name="detail" label="Description" rule="REQ" block />,
+        <PayDetails name="salary" label="Pay details" rule="REQ PAY_SALARY" block />,
         <Location name="location" label="Location" rule="REQ" display={() => formData.account} account={formData.account} />,
         <Category name="category" label="Category" rule="REQ" display={() => formData.account && formData.location} account={formData.account} location={formData.location} />,
         <RadioGroup
           name="seekWorkArrangement"
-          label="Work Arrangement"
+          label="Work setting"
           options={[
-            { value: 'OnSite', label: 'On Site' },
+            { value: 'OnSite', label: 'On-site' },
             { value: 'Remote', label: 'Remote' },
             { value: 'Hybrid', label: 'Hybrid' }
           ]}
         />,
         <RadioGroup
           name="workType"
-          label="Work Type"
+          label="Work type"
           options={[
-            { value: 'FullTime', label: 'Full Time' },
-            { value: 'PartTime', label: 'Part Time' },
-            { value: 'ContractTemp', label: 'ContractTemp' },
+            { value: 'FullTime', label: 'Full time' },
+            { value: 'PartTime', label: 'Part time' },
+            { value: 'ContractTemp', label: 'Contract/Temp' },
             { value: 'Casual', label: 'Casual' }
           ]}
         />,
         <AdSelection
           block
           name="seekAdvertisementProductId"
-          label="SEEK Ad Selection"
+          label="SEEK ad selection"
           rule="REQ"
           positionTitle={positionTitle}
           display={() => formData.account && formData.location && formData.category}
