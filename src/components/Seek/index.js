@@ -19,7 +19,7 @@ const CreatePosition = createWithRemoteLoader({
     <Form
       className={style['form']}
       data={{
-        detail: props.positionDetail
+        detail: props.positionDetail.replace(/\n/g, '<br/>')
       }}
       rules={{ PAY_SALARY }}
       onSubmit={async data => {
@@ -34,7 +34,7 @@ const CreatePosition = createWithRemoteLoader({
           seekAdvertisementProductId: data.seekAdvertisementProductId,
           offeredRemunerationPackage: transformSalary(data.salary),
           summary: data.summary,
-          detail: data.detail.replace(/\n/g, '<br/>'),
+          detail: data.detail,
           leapinJobId: props.positionId,
           formData: data
         };
@@ -66,7 +66,6 @@ const EditPosition = createWithRemoteLoader({
   const { Form, SubmitButton } = FormInfo;
   const { apis, ajax } = usePreset();
   const { message } = App.useApp();
-
   return (
     <Form
       className={style['form']}
@@ -84,7 +83,7 @@ const EditPosition = createWithRemoteLoader({
           seekAdvertisementProductId: data.seekAdvertisementProductId,
           offeredRemunerationPackage: transformSalary(data.salary),
           summary: data.summary,
-          detail: data.detail.replace(/\n/g, '<br/>'),
+          detail: data.detail,
           leapinJobId: props.positionId,
           formData: data
         };

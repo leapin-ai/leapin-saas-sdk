@@ -1,5 +1,5 @@
 import { createWithRemoteLoader } from '@kne/remote-loader';
-import { Alert, Empty, Select } from 'antd';
+import { Alert, Select } from 'antd';
 import { useEffect, useState } from 'react';
 import useControlValue from '@kne/use-control-value';
 
