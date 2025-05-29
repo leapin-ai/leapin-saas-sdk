@@ -32,7 +32,7 @@ const RecruitmentChannel = createWithRemoteLoader({
                 setCurrent(null);
               }}
             >
-              返回
+              Back
             </Button>
             <div>{current.label}</div>
           </Flex>
@@ -40,8 +40,8 @@ const RecruitmentChannel = createWithRemoteLoader({
         </Flex>
       ) : (
         <>
-          <h3>招聘网站管理</h3>
-          <div>选择招聘网站完成发布与更新</div>
+          <h3>Recruitment website management</h3>
+          <div>Choose a recruitment website to complete publishing and updating</div>
           <Flex gap={12}>
             {channel.map(item => {
               return (
