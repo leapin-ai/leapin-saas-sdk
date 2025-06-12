@@ -4,31 +4,36 @@ import useControlValue from '@kne/use-control-value';
 import transformSalary from '../transformSalary';
 import get from 'lodash/get';
 
-const AdSelectionField = createWithRemoteLoader({
+const QuestionSelectionField = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset']
-})(({ remoteModules, account, location, category, positionTitle, salary, workType, onBrandingChange, ...props }) => {
+})(({ remoteModules, getApis, mode, positionDetail, positionSummary, account, location, category, positionTitle, salary, workType, onBrandingChange, ...props }) => {
   const [usePreset] = remoteModules;
   const { ajax, apis } = usePreset();
-  const [value, onChange] = useControlValue(props);
+  const [value] = useControlValue(props);
+
   return (
     <SeekComponent
-      name="adSelection"
-      onChange={event => {
-        const { selectedProduct } = event;
-        onBrandingChange && onBrandingChange(!!get(selectedProduct, 'features.branding'));
-        if (value !== selectedProduct?.id) {
-          onChange(selectedProduct?.id);
-        }
-      }}
-      selectedAdvertisementProductId={value}
+      name="questionnaire"
+      getApis={getApis}
+      questionnaireId={value}
       payload={{
+        mode,
+        schemeId: account?.schemeId,
         positionProfile: {
-          jobCategories: category,
-          positionLocation: location?.value,
-          positionOrganizations: account?.value,
+          jobCategories: [category],
+          positionLocation: [location?.value],
+          positionOrganizations: [account?.value],
           positionTitle,
-          offeredRemunerationPackage: transformSalary(salary),
-          seekAnzWorkTypeCode: workType
+          positionFormattedDescriptions: [
+            {
+              content: positionDetail,
+              descriptionId: 'AdvertisementDetails'
+            },
+            {
+              content: positionSummary,
+              descriptionId: 'SearchSummary'
+            }
+          ]
         }
       }}
       getAuthToken={async () => {
@@ -47,13 +52,13 @@ const AdSelectionField = createWithRemoteLoader({
   );
 });
 
-const AdSelection = createWithRemoteLoader({
+const QuestionSelection = createWithRemoteLoader({
   modules: ['components-core:FormInfo']
 })(({ remoteModules, ...props }) => {
   const [FormInfo] = remoteModules;
   const { useOnChange } = FormInfo.hooks;
   const render = useOnChange(props);
-  return render(AdSelectionField);
+  return render(QuestionSelectionField);
 });
 
-export default AdSelection;
+export default QuestionSelection;

@@ -5,43 +5,67 @@ import PositionFormInner, { PAY_SALARY } from './PositionFormInner';
 import transformSalary from './transformSalary';
 import Fetch from '@kne/react-fetch';
 import get from 'lodash/get';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ReactComponent as Logo } from './logo.svg';
 
 const CreatePosition = createWithRemoteLoader({
-  modules: ['components-core:FormInfo', 'components-core:Global@usePreset']
+  modules: ['components-core:FormInfo', 'components-core:Global@usePreset', 'components-core:LoadingButton']
 })(({ remoteModules, reload, ...props }) => {
-  const [FormInfo, usePreset] = remoteModules;
+  const [FormInfo, usePreset, LoadingButton] = remoteModules;
   const { apis, ajax } = usePreset();
   const { Form, SubmitButton } = FormInfo;
   const { message } = App.useApp();
+  const formRef = useRef();
+  const questionSelectionApisRef = useRef();
+  const transformData = data => {
+    return Object.assign(
+      {},
+      {
+        platformCode: 'seek',
+        hirerId: data.account?.value,
+        positionTitle: props.positionTitle,
+        seekAnzWorkTypeCode: data.workType,
+        seekWorkArrangementCodes: data.seekWorkArrangement && [data.seekWorkArrangement],
+        jobCategories: data.category,
+        positionLocation: data.location?.value,
+        seekAdvertisementProductId: data.seekAdvertisementProductId,
+        offeredRemunerationPackage: transformSalary(data.salary),
+        seekBillingReference: data.seekBillingReference,
+        seekHirerJobReference: data.seekHirerJobReference,
+        brandingId: data.brandingId,
+        summary: data.summary,
+        detail: data.detail,
+        leapinJobId: props.positionId,
+        formData: data
+      },
+      data.videoUrl && {
+        seekVideo: {
+          url: data.videoUrl,
+          seekAnzPositionCode: data.videoPosition
+        }
+      }
+    );
+  };
   return (
     <Form
+      ref={formRef}
       className={style['form']}
       data={{
         detail: props.positionDetail.replace(/\n/g, '<br/>')
       }}
       rules={{ PAY_SALARY }}
       onSubmit={async data => {
-        const output = {
-          platformCode: 'seek',
-          hirerId: data.account?.value,
-          positionTitle: props.positionTitle,
-          seekAnzWorkTypeCode: data.workType,
-          seekWorkArrangementCodes: data.seekWorkArrangement && [data.seekWorkArrangement],
-          jobCategories: data.category,
-          positionLocation: data.location?.value,
-          seekAdvertisementProductId: data.seekAdvertisementProductId,
-          offeredRemunerationPackage: transformSalary(data.salary),
-          summary: data.summary,
-          detail: data.detail,
-          leapinJobId: props.positionId,
-          formData: data
-        };
+        const output = transformData(data);
+
+        const result = await questionSelectionApisRef.current.dispatchEvent('seek:questionnaire:save');
+        if (result.isError) {
+          message.error('Questionnaire save failed');
+          return;
+        }
 
         const { data: resData } = await ajax(
           Object.assign({}, apis.seek.post, {
-            data: output
+            data: Object.assign({}, output, result.data?.id && { seekApplicationQuestionnaireId: result.data?.id })
           })
         );
         if (resData.code !== 0) {
@@ -51,9 +75,32 @@ const CreatePosition = createWithRemoteLoader({
         reload && reload();
       }}
     >
-      <PositionFormInner {...props} />
-      <Flex justify="center">
+      <PositionFormInner
+        {...props}
+        mode="Create"
+        getQuestionSelectionApis={apis => {
+          questionSelectionApisRef.current = apis;
+        }}
+      />
+      <Flex justify="center" gap={20}>
         <SubmitButton>Submit</SubmitButton>
+        <LoadingButton
+          onClick={async () => {
+            const data = formRef.current.data;
+            const output = transformData(data);
+            const { data: resData } = await ajax(
+              Object.assign({}, apis.seek.preview, {
+                data: output
+              })
+            );
+            if (resData.code !== 0) {
+              return;
+            }
+            window.open(resData.data.url, '_blank');
+          }}
+        >
+          Preview
+        </LoadingButton>
       </Flex>
     </Form>
   );
@@ -100,7 +147,7 @@ const EditPosition = createWithRemoteLoader({
         reload && reload();
       }}
     >
-      <PositionFormInner {...props} />
+      <PositionFormInner {...props} mode="Update" getQuestionSelectionApis={apis => {}} />
       <Flex justify="center" gap={20}>
         <SubmitButton>Submit</SubmitButton>
         <Button onClick={reload}>Cancel</Button>

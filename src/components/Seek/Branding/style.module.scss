@@ -1,0 +1,40 @@
+.branding-list {
+  padding-bottom: 16px;
+  height: 360px;
+}
+
+.branding-card {
+  flex: none;
+  width: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  border-width: 4px;
+
+  &.is-active {
+    border-color: var(--primary-color);
+  }
+
+  :global(.ant-card-cover) {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2ZmZiI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+');
+
+    img {
+      object-fit: fill;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  :global(.ant-card-body) {
+    padding: 24px !important;
+  }
+}
+
+.branding-logo {
+  object-fit: contain;
+  width: 80px;
+  height: 80px;
+}

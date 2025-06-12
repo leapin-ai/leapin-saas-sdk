@@ -31,4 +31,14 @@
       background-color: #f0f7ff !important;
     }
   }
+
+  .ant-row {
+    display: flex;
+  }
+
+  .react-form__field-input {
+    .ant-row .ant-btn {
+      border-color: transparent !important;
+    }
+  }
 }

@@ -2,6 +2,7 @@ import { createWithFetch } from '@kne/react-fetch';
 import { getOrLoadRemote } from '@kne/remote-loader';
 import { useEffect, useRef, memo } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
+import useRefCallback from '@kne/use-ref-callback';
 
 const SeekComponent = createWithFetch({
   loader: () => {
@@ -9,16 +10,18 @@ const SeekComponent = createWithFetch({
   }
 })(
   memo(
-    ({ name, ...props }) => {
+    ({ name, payload, getApis, ...props }) => {
       const ref = useRef(null);
+      useRefCallback(ref);
       useEffect(() => {
         console.log('rerender');
-        window.SeekApi.render(ref.current, name, props);
+        const apis = window.SeekApi.render(ref.current, name, Object.assign({}, props, payload));
+        getApis && getApis(apis);
       }, [name, props]);
       return <div ref={ref} />;
     },
     (prevProps, nextProps) => {
-      return isEqualWith(prevProps, nextProps, (a, b) => {
+      return isEqualWith(prevProps.payload, nextProps.payload, (a, b) => {
         if (typeof a === 'function' && typeof b === 'function') {
           return true;
         }
