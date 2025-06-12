@@ -39,6 +39,14 @@ const getApis = options => {
       update: {
         url: `${prefix}/integration/seek/job/update/`,
         method: 'PUT'
+      },
+      getBranding: {
+        url: `${prefix}/integration/seek/brand/list/`,
+        method: 'GET'
+      },
+      preview: {
+        url: `${prefix}/integration/seek/job/preview/`,
+        method: 'POST'
       }
     }
   };

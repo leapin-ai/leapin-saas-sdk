@@ -2,6 +2,8 @@ import React from 'react';
 import { preset as fetchPreset } from '@kne/react-fetch';
 import { Spin, Empty, message } from 'antd';
 import cookie from 'js-cookie';
+import ensureSlash from '@kne/ensure-slash';
+import md5 from 'md5';
 import createAjax from '@kne/axios-fetch';
 import { preset as remoteLoaderPreset } from '@kne/remote-loader';
 import { getApis } from '@components/Apis';
@@ -87,7 +89,78 @@ export const globalInit = async () => {
   return {
     ajax,
     locale: 'en-US',
-    apis: Object.assign({}, getApis()),
+    apis: Object.assign({}, getApis(), {
+      file: {
+        contentWindowUrl: 'https://cdn.leapin-ai.com/components/@kne/iframe-resizer/0.1.3/dist/contentWindow.js', //pdfjsUrl: 'https://cdn.leapin-ai.com/components/pdfjs-dist/4.4.168',
+        upload: async ({ file }) => {
+          /*return {
+                                                                                                                        data: {
+                                                                                                                          code: 0,
+                                                                                                                          data: {
+                                                                                                                            src: 'https://user-video-staging.oss-cn-hangzhou.aliyuncs.com/tenant-89/candidate/cv/17700713ccc28c0ce29d6b87237bb8b5.pdf',
+                                                                                                                            filename: file.name
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      };*/
+          const { data: resData } = await ajax(
+            Object.assign(
+              {},
+              {
+                url: '/api/common/upload/token',
+                params: { media_params: 'candidate-cv' },
+                method: 'GET'
+              }
+            )
+          );
+          if (resData.code !== 0) {
+            return { code: resData.code, msg: resData.error_msg };
+          }
+          const ossConfig = resData.data;
+
+          const md5Hash = await new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsBinaryString(file);
+            fileReader.onload = e => {
+              const md5Hash = md5(e.target.result);
+              resolve(md5Hash);
+            };
+            fileReader.onerror = () => {
+              reject();
+            };
+          });
+
+          const targetFileName = `${md5Hash}.${file.name.split('.').pop()}`;
+
+          const { data: uploadRes } = await ajax.postForm(
+            Object.assign(
+              {},
+              {
+                url: ossConfig.host,
+                showError: false,
+                data: {
+                  key: `${ensureSlash(ossConfig.dir, true)}${targetFileName}`,
+                  'x-oss-object-acl': 'public-read',
+                  policy: ossConfig.policy,
+                  OSSAccessKeyId: ossConfig.OSSAccessKeyId,
+                  signature: ossConfig.Signature,
+                  success_action_status: 201,
+                  file
+                }
+              }
+            )
+          );
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(uploadRes, 'text/xml');
+          xmlDoc.getElementsByTagName('Location');
+          return {
+            data: {
+              code: 0,
+              data: { src: xmlDoc.getElementsByTagName('Location')[0].textContent, filename: file.name }
+            }
+          };
+        }
+      }
+    }),
     themeToken: {
       colorPrimary: '#4183F0'
     }
