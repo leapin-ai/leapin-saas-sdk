@@ -1,11 +1,11 @@
 import RemoteModule from '@kne/remote-loader';
 import RecruitmentChannel from '@components/RecruitmentChannel';
-import InventoryReport from '@components/InventoryReport';
+import InventoryReport, { InventoryReportButton, ShareInventoryReport } from '@components/InventoryReport';
 import { Empty, ConfigProvider } from 'antd';
 import { useRef } from 'react';
 import './index.scss';
 
-const typeMapping = { RecruitmentChannel, InventoryReport };
+const typeMapping = { RecruitmentChannel, InventoryReport, InventoryReportButton, ShareInventoryReport };
 
 const App = ({ globalPreset, themeToken, options }) => {
   const { type, ...props } = Object.assign({}, options);
