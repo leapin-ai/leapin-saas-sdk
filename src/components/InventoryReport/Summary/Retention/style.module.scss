@@ -1,0 +1,20 @@
+.split-line {
+  background: #f8f9fb;
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+
+  :global(.ant-space-item) {
+    flex: 1;
+  }
+}
+
+.view {
+  color: #22d5ab;
+  font-size: 18px;
+  font-weight: 600;
+
+  &.red {
+    color: #ed4e45;
+  }
+}

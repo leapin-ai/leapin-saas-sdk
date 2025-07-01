@@ -1,0 +1,50 @@
+{
+  "code": 0,
+  "data": {
+    "id": 119,
+    "name": "2024年度素然人才纳新测评-管理类",
+    "inventory_status": 2,
+    "start_time": "2024-12-09",
+    "end_time": "2025-01-06",
+    "inventory_dimension": [214, 213],
+    "user_application_form_inventory": [
+      {
+        "id": 447,
+        "user_email": "739997660@qq.com",
+        "user_name": "nina",
+        "department_names": ["财务部"],
+        "status": 2,
+        "ai_report_status": 4,
+        "inventory": 119,
+        "total_score": null,
+        "total_question_score": null,
+        "rank": null
+      },
+      {
+        "id": 445,
+        "user_email": "",
+        "user_name": "Iris",
+        "department_names": ["人事行政部"],
+        "status": 2,
+        "ai_report_status": 4,
+        "inventory": 119,
+        "total_score": null,
+        "total_question_score": null,
+        "rank": null
+      },
+      {
+        "id": 446,
+        "user_email": "",
+        "user_name": "Support Wang",
+        "department_names": ["财务部"],
+        "status": 2,
+        "ai_report_status": 4,
+        "inventory": 119,
+        "total_score": null,
+        "total_question_score": null,
+        "rank": null
+      }
+    ]
+  },
+  "error_msg": ""
+}

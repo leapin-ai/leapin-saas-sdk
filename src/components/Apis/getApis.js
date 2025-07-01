@@ -7,6 +7,31 @@ const getApis = options => {
     options
   );
   return {
+    inventory: {
+      userList: {
+        url: `${prefix}/inventory/inventory/inventory_form/{id}/`,
+        method: 'GET'
+      },
+      detail: {
+        url: `${prefix}/inventory/inventory_user/inventory_user_report/{id}/`,
+        method: 'GET'
+      },
+      answer: {
+        url: `${prefix}/inventory/inventory_user/inventory_user_form_answers/{id}/`,
+        method: 'GET'
+      },
+      shareDetail: {
+        url: `${prefix}/inventory/share/company/{company_tenant_id}/inventory_user_report/{share_token}/`,
+        method: 'GET'
+      },
+      shareAnswer: {
+        url: `${prefix}/inventory/share/company/{company_tenant_id}/inventory_user_form/{share_token}/`,
+        method: 'GET'
+      },
+      getShareLink: {
+        url: `${prefix}/inventory/share/inventory_user/{id}/`
+      }
+    },
     seek: {
       organizations: {
         url: `${prefix}/integration/seek/organizations/`,
