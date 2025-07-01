@@ -1,11 +1,25 @@
 import { globalInit } from './preset';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 const renderRoot = async (root, options) => {
   const globalPreset = await globalInit(options);
-  root.render(<App themeToken={globalPreset.themeToken} globalPreset={globalPreset} options={options} />);
+
+  if (process.env.NODE_ENV === 'development') {
+    await import('@kne/modules-dev/dist/create-entry.css');
+    await import('@kne/modules-dev/dist/create-entry').then(module => {
+      const Entry = module.default(({ globalPreset }) => <App globalPreset={globalPreset} />);
+      root.render(
+        <BrowserRouter>
+          <Entry themeToken={globalPreset.themeToken} globalPreset={globalPreset} options={options} />
+        </BrowserRouter>
+      );
+    });
+  } else {
+    root.render(<App themeToken={globalPreset.themeToken} globalPreset={globalPreset} options={options} />);
+  }
 };
 
 const leapinSaasSdk = async (target, options) => {

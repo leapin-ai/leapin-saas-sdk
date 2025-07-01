@@ -1,0 +1,27 @@
+.record {
+  display: inline-flex;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.answer-list {
+  background: #fcfbfc;
+  padding: 32px;
+  border-radius: 20px;
+}
+
+.question {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.answer video {
+  border-radius: 20px;
+  width: 640px;
+  height: 480px;
+  object-fit: cover;
+}

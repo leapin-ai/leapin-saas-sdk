@@ -4,7 +4,7 @@ if (env.BRANCH_NAME == 'master') {
 }
 
 standardPipeline {
-    projectName = "ai-agent"
+    projectName = "leapin-saas-sdk"
     isMultiBranch = true
     buildCommand = {
         sh "${build_command}"

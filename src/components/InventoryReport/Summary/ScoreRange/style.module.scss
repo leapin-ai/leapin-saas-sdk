@@ -1,0 +1,44 @@
+.score-range {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.line {
+  position: relative;
+}
+
+.line-range {
+  height: 4px;
+  background-color: #84ddb7;
+  border-radius: 2px;
+  position: absolute;
+  width: var(--width);
+  left: var(--location);
+  top: -1px;
+  z-index: 1;
+}
+
+.line-point {
+  left: var(--point);
+  background-color: var(--primary-color);
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  position: absolute;
+  z-index: 2;
+}
+
+.line-item {
+  flex: 1;
+  border-top: 1px solid #e6e8f0;
+  font-size: 12px;
+  color: var(--font-color-grey-1);
+  padding-top: 12px;
+  position: relative;
+
+  &:last-child {
+    flex: none;
+  }
+}
