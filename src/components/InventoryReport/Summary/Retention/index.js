@@ -9,6 +9,7 @@ const Retention = createWithRemoteLoader({
 })(({ remoteModules, data }) => {
   const [SplitLine] = remoteModules;
   const { formatMessage } = useIntl();
+
   return (
     <SplitLine
       className={style['split-line']}
@@ -43,9 +44,9 @@ const Retention = createWithRemoteLoader({
             return (
               <Flex vertical gap={4}>
                 <div style={{ width: '150px' }}>
-                  <Progress percent={value} type="line" />
+                  <Progress percent={value} type="line" className={style['performance-progress']} />
                 </div>
-                <Typography.Link>{formatMessage({ id: 'meetsExpectations' })}</Typography.Link>
+                <Typography.Link className={style['performance-description']}>{data.performanceLevel}</Typography.Link>
               </Flex>
             );
           }
@@ -57,9 +58,9 @@ const Retention = createWithRemoteLoader({
             return (
               <Flex vertical gap={4}>
                 <div style={{ width: '150px' }}>
-                  <Progress percent={value} type="line" />
+                  <Progress percent={value} type="line" className={style['performance-progress']} />
                 </div>
-                <Typography.Link>{formatMessage({ id: 'meetsExpectations' })}</Typography.Link>
+                <Typography.Link className={style['performance-description']}>{formatMessage({ id: 'meetsExpectations' })}</Typography.Link>
               </Flex>
             );
           }

@@ -37,7 +37,7 @@ const getValue = (row, col) => {
   return 0;
 };
 
-const NineSquareGrid = ({ verticalTitle = 'Potential', horizontalTitle = 'Performance', value }) => {
+const NineSquareGrid = ({ verticalTitle, horizontalTitle, value }) => {
   const { formatMessage } = useIntl();
   return (
     <div className={style['square-grid-container']}>
@@ -57,7 +57,7 @@ const NineSquareGrid = ({ verticalTitle = 'Potential', horizontalTitle = 'Perfor
         })}
       </Flex>
       <div className={style['vertical-line']}>
-        <span className={style['line-title']}>{verticalTitle}</span>
+        <span className={style['line-title']}>{verticalTitle || formatMessage({ id: 'potential' })}</span>
         <Flex className={classnames(style['line-item'], style['vertical'])} vertical justify="space-between" align="flex-end">
           <div>{formatMessage({ id: 'high' })}</div>
           <div>{formatMessage({ id: 'moderate' })}</div>
@@ -65,7 +65,7 @@ const NineSquareGrid = ({ verticalTitle = 'Potential', horizontalTitle = 'Perfor
         </Flex>
       </div>
       <div className={style['horizontal-line']}>
-        <span className={style['line-title']}>{horizontalTitle}</span>
+        <span className={style['line-title']}>{horizontalTitle || formatMessage({ id: 'performance' })}</span>
         <Flex className={style['line-item']} justify="space-between" align="center">
           <div>{formatMessage({ id: 'low' })}</div>
           <div>{formatMessage({ id: 'moderate' })}</div>

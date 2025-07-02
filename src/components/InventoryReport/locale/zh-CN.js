@@ -10,6 +10,7 @@ const locale = {
   nineSquareGrid: '九宫格定位',
 
   potential: '潜力',
+  performance: '绩效',
   retention: '员工稳定性',
   lossImpact: '流失影响',
   lastPerformanceRating: '上期绩效评分',
@@ -24,6 +25,10 @@ const locale = {
   mobility: '流动性',
   careerInterests: '职业意向',
 
+  high: '高',
+  moderate: '中',
+  low: '低',
+
   suggestionsForImproving: '以下是一些改进建议',
   scoreFiled: '分数生成失败',
   scoreFiledDescription: '语音不清无法识别\n无法识别到有效的语言种类\n分数生成失败的不参与平均分计算',
@@ -33,7 +38,8 @@ const locale = {
   question: '问题',
   copyShareLinkTitle: '请复制分享链接',
   copyShareLinkSuccess: '复制分享链接成功',
-  copy: '复制'
+  copy: '复制',
+  dimensionalAnalysis: '维度分析'
 };
 
 export default locale;

@@ -18,3 +18,16 @@
     color: #ed4e45;
   }
 }
+
+.performance-description {
+  text-align: center;
+}
+
+.performance-progress {
+  :global {
+    .ant-progress-outer {
+      margin-right: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+}

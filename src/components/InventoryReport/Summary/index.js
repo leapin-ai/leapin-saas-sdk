@@ -83,7 +83,8 @@ const Summary = createWithRemoteLoader({
               data={{
                 potential: get(data, 'grid_data.y.level'),
                 lossImpact: get(data, 'grid_data.loss_impact'),
-                lastPerformanceRating: get(data, 'grid_data.x.score')
+                lastPerformanceRating: get(data, 'grid_data.x.score'),
+                performanceLevel: get(data, 'grid_data.x.level')
               }}
             />
           </Flex>
@@ -130,7 +131,7 @@ const Summary = createWithRemoteLoader({
           </Flex>
         </Flex>
       </InfoPage.Part>
-      <InfoPage.Part title="Completencies">
+      <InfoPage.Part title={formatMessage({ id: 'dimensionalAnalysis' })}>
         <Flex vertical gap={52}>
           <div className={style['card-box']}>
             <BarChart
