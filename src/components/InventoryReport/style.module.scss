@@ -29,20 +29,6 @@
 }
 
 .report {
-  :global {
-    .part-title {
-      font-size: 20px;
-      margin-bottom: 8px;
-
-      &:before {
-        width: 8px;
-        height: 8px;
-        background-image: url('./dot.svg');
-        background-color: transparent;
-      }
-    }
-  }
-
   &:global {
     & > .ant-tabs-nav {
       .ant-tabs-nav-list {
@@ -77,7 +63,11 @@
         padding-left: 0 !important;
       }
 
-      .ant-tabs {
+      .ant-tabs-nav-wrap {
+        padding: 0 32px;
+      }
+
+      .ant-tabs-content-holder {
         padding: 0 32px;
       }
     }
@@ -93,6 +83,26 @@
 
 .report-content {
   padding-bottom: 60px !important;
+
+  :global {
+    .part-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+
+      &:before {
+        width: 8px;
+        height: 8px;
+        background-image: url('./dot.svg');
+        background-color: transparent;
+      }
+    }
+  }
+
+  :global {
+    .ant-tabs-nav {
+      border-top: 1px solid #e6e8f0;
+    }
+  }
 }
 
 .modal {
@@ -122,7 +132,7 @@
 
   :global {
     .ant-tabs {
-      padding: 0 32px;
+      padding: 0 32px !important;
     }
   }
 }

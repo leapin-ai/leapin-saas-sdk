@@ -10,6 +10,7 @@ const locale = {
   nineSquareGrid: '9 Box Position',
 
   potential: 'Potential',
+  performance: 'Performance',
   retention: 'Retention',
   lossImpact: 'Loss Impact',
   lastPerformanceRating: 'Last Performance Rating',
@@ -27,6 +28,7 @@ const locale = {
   high: 'High',
   moderate: 'Moderate',
   low: 'Low',
+
   suggestionsForImproving: 'Here are some suggestions for improving',
   scoreFiled: 'Score generation failed',
   scoreFiledDescription: 'The voice is unclear and cannot be recognized\nThose who fail to generate scores will not participate in the calculation of average scores',
@@ -36,7 +38,9 @@ const locale = {
   question: 'Question',
   copyShareLinkTitle: 'Please copy the sharing link',
   copyShareLinkSuccess: 'Copy and share link successfully',
-  copy: 'Copy'
+  copy: 'Copy',
+
+  dimensionalAnalysis: 'Dimensional analysis'
 };
 
 export default locale;

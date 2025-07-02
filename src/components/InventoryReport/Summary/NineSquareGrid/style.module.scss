@@ -13,7 +13,7 @@
   height: calc(100% - 100px + 2 * 8px);
   background-color: var(--primary-color);
   padding-top: 8px;
-
+  word-break: keep-all;
   .line-title {
     position: absolute;
     color: var(--primary-color);
