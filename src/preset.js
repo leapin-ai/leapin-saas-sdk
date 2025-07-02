@@ -12,11 +12,23 @@ window.PUBLIC_URL = window.runtimePublicUrl || process.env.PUBLIC_URL;
 
 const baseApiUrl = window.runtimeApiUrl || '';
 
+const getLocale = () => {
+  let locale = localStorage.getItem('sdk_lan');
+  if (locale) {
+    localStorage.setItem('x-leapin-lang-code', locale);
+  } else {
+    locale = localStorage.getItem('x-leapin-lang-code') || 'zh-Hans';
+  }
+
+  return locale;
+};
+
 export const globalInit = async () => {
   const ajax = createAjax({
     baseUrl: baseApiUrl,
     getDefaultHeaders: () => {
       return {
+        'x-leapin-lang-code': getLocale(),
         Authorization: `Bearer ${cookie.get('token')}`
       };
     },
@@ -57,7 +69,7 @@ export const globalInit = async () => {
     //url: 'http://localhost:3001',
     //tpl: '{{url}}',
     remote: 'components-core',
-    defaultVersion: '0.3.29'
+    defaultVersion: '0.3.30'
   };
   remoteLoaderPreset({
     remotes: {
@@ -90,7 +102,13 @@ export const globalInit = async () => {
 
   return {
     ajax,
-    locale: 'en-US',
+    locale: (() => {
+      const locale = getLocale();
+      if (locale === 'zh-Hans') {
+        return 'zh-CN';
+      }
+      return 'en-US';
+    })(),
     apis: Object.assign({}, getApis(), {
       file: {
         contentWindowUrl: 'https://cdn.leapin-ai.com/components/@kne/iframe-resizer/0.1.3/dist/contentWindow.js', //pdfjsUrl: 'https://cdn.leapin-ai.com/components/pdfjs-dist/4.4.168',
@@ -164,7 +182,7 @@ export const globalInit = async () => {
       }
     }),
     themeToken: {
-      colorPrimary: '#4183F0'
+      colorPrimary: '#285BC0'
     }
   };
 };

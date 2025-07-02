@@ -1,4 +1,5 @@
-.core-container-body {
+.core-container-body,
+.modal-container {
   .ant-btn.btn-no-gap {
     gap: 0;
   }
@@ -40,5 +41,29 @@
     .ant-row .ant-btn {
       border-color: transparent !important;
     }
+  }
+
+  .ant-tabs-nav .ant-tabs-tab {
+    height: unset;
+    padding: 12px 0;
+    margin: 0;
+  }
+
+  .ant-tabs .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 32px;
+  }
+
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+    margin: 16px 0 0 0;
+  }
+
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    padding: 8px 24px;
   }
 }

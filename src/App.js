@@ -8,7 +8,7 @@ import './index.scss';
 const typeMapping = { RecruitmentChannel, InventoryReport, InventoryReportButton, ShareInventoryReport };
 
 const App = ({ globalPreset, themeToken, options }) => {
-  const { type, ...props } = Object.assign({}, options);
+  const { type, componentType, ...props } = Object.assign({}, options);
   const ref = useRef(null);
   const Component = typeMapping[type];
   if (!Component) {
@@ -18,7 +18,7 @@ const App = ({ globalPreset, themeToken, options }) => {
     <RemoteModule module="components-core:Global@PureGlobal" preset={globalPreset} themeToken={themeToken}>
       <div ref={ref}>
         <ConfigProvider getPopupContainer={() => ref.current}>
-          <Component {...props} />
+          <Component {...props} type={componentType} />
         </ConfigProvider>
       </div>
     </RemoteModule>
