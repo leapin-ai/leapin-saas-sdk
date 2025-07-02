@@ -6,19 +6,11 @@ import enUS from './locale/en-US';
 import zhCN from './locale/zh-CN';
 import { useIntl, createIntlProvider } from '@kne/react-intl';
 import Report from './Report';
-
-const IntlProvider = createIntlProvider({
-  defaultLocale: 'zh-CN',
-  messages: {
-    'zh-CN': zhCN,
-    'en-US': enUS
-  },
-  namespace: 'leapin-saas-sdk:InventoryReport'
-});
+import IntlProvider from './IntlProvider';
 
 const InventoryReport = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset']
-})(({ remoteModules, id }) => {
+})(({ remoteModules, id, detailId }) => {
   const [usePreset] = remoteModules;
   const { apis } = usePreset();
   return (
@@ -31,8 +23,10 @@ const InventoryReport = createWithRemoteLoader({
           if (!(data.user_application_form_inventory && data.user_application_form_inventory.length > 0)) {
             return <Empty />;
           }
+
           return (
             <Tabs
+              defaultActiveKey={detailId}
               className={style['report']}
               tabPosition="left"
               items={data.user_application_form_inventory.map(item => {

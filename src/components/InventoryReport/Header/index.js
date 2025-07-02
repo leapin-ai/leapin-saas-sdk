@@ -4,13 +4,13 @@ import get from 'lodash/get';
 import { MobileOutlined, MailOutlined } from '@ant-design/icons';
 import { useIntl } from '@kne/react-intl';
 import style from '../style.module.scss';
-import { App } from 'antd';
+import { App, Alert } from 'antd';
 import { ReactComponent as DownloadIcon } from './download.svg';
 import { ReactComponent as ShareIcon } from './share.svg';
 
 const Header = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset', 'components-core:Image', 'components-core:InfoPage@SplitLine', 'components-core:LoadingButton', 'components-core:Modal@useModal', 'components-core:File@download']
-})(({ remoteModules, data, title, apis }) => {
+})(({ remoteModules, data, title, exportDisabled, apis }) => {
   const [usePreset, Image, SplitLine, LoadingButton, useModal, download] = remoteModules;
   const { formatMessage } = useIntl();
   const { ajax } = usePreset();
@@ -35,39 +35,47 @@ const Header = createWithRemoteLoader({
               download(data.data, 'report');
             }}
           />
-          <LoadingButton
-            size="small"
-            icon={<ShareIcon />}
-            type="link"
-            onClick={async () => {
-              const { data } = await ajax(Object.assign({}, apis.getShareLink));
+          {!exportDisabled && (
+            <LoadingButton
+              size="small"
+              icon={<ShareIcon />}
+              type="link"
+              onClick={async () => {
+                const { data } = await ajax(Object.assign({}, apis.getShareLink));
 
-              if (data.code !== 0) {
-                return;
-              }
-              modal({
-                title: '请复制分享链接',
-                size: 'small',
-                footer: null,
-                children: (
-                  <Flex vertical gap={60}>
-                    <div style={{ minHeight: '100px' }}>{data.data}</div>
-                    <Flex justify="center" gap={12}>
-                      <LoadingButton
-                        type="primary"
-                        onClick={async () => {
-                          await navigator.clipboard.writeText(data.data);
-                          message.success('复制分享链接成功');
-                        }}
-                      >
-                        复制
-                      </LoadingButton>
+                if (data.code !== 0) {
+                  return;
+                }
+                modal({
+                  title: formatMessage({ id: 'copyShareLinkTitle' }),
+                  size: 'small',
+                  footer: null,
+                  children: (
+                    <Flex vertical gap={60}>
+                      <Alert
+                        message={
+                          <Flex style={{ minHeight: '100px' }} align="center">
+                            {data.data}
+                          </Flex>
+                        }
+                      />
+                      <Flex justify="center" gap={12}>
+                        <LoadingButton
+                          type="primary"
+                          onClick={async () => {
+                            await navigator.clipboard.writeText(data.data);
+                            message.success(formatMessage({ id: 'copyShareLinkSuccess' }));
+                          }}
+                        >
+                          {formatMessage({ id: 'copy' })}
+                        </LoadingButton>
+                      </Flex>
                     </Flex>
-                  </Flex>
-                )
-              });
-            }}
-          />
+                  )
+                });
+              }}
+            />
+          )}
         </Flex>
       </Flex>
       <Flex gap={20} className={style['header-info']}>

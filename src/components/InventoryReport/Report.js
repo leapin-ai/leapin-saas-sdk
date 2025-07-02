@@ -6,14 +6,14 @@ import Summary from './Summary';
 import Record from './Record';
 import Fetch from '@kne/react-fetch';
 
-const Report = ({ title, apis }) => {
+const Report = ({ title, exportDisabled, apis }) => {
   return (
     <Fetch
       {...Object.assign({}, apis.detail)}
       render={({ data }) => {
         return (
           <Flex vertical>
-            <Header data={data} title={title} apis={apis} />
+            <Header data={data} title={title} exportDisabled={exportDisabled} apis={apis} />
             <Tabs
               className={style['report-content']}
               items={[

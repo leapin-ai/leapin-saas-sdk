@@ -92,11 +92,13 @@
 }
 
 .report-content {
+  padding-bottom: 60px !important;
 }
 
 .modal {
   :global(.modal-body-inner) {
     padding: 0;
+    min-height: var(--modal-height);
   }
 
   :global(.ant-modal-content) {
@@ -105,5 +107,22 @@
 
   :global(.modal-close) {
     top: 9px;
+  }
+}
+
+.report-modal {
+  > :global(.ant-tabs) {
+    min-height: var(--modal-height);
+  }
+}
+
+.share-report {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  :global {
+    .ant-tabs {
+      padding: 0 32px;
+    }
   }
 }

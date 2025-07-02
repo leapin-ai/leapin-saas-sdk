@@ -31,7 +31,12 @@ const locale = {
   scoreFiled: 'Score generation failed',
   scoreFiledDescription: 'The voice is unclear and cannot be recognized\nThose who fail to generate scores will not participate in the calculation of average scores',
   strength: 'Strength',
-  improvement: 'Improvement'
+  improvement: 'Improvement',
+  aiInterviewPlayback: 'AI Interview Playback',
+  question: 'Question',
+  copyShareLinkTitle: 'Please copy the sharing link',
+  copyShareLinkSuccess: 'Copy and share link successfully',
+  copy: 'Copy'
 };
 
 export default locale;

@@ -5,7 +5,7 @@ import style from './style.module.scss';
 
 const InventoryReportButton = createWithRemoteLoader({
   modules: ['components-core:Modal@useModal']
-})(({ remoteModules, id, ...props }) => {
+})(({ remoteModules, id, detailId, ...props }) => {
   const [useModal] = remoteModules;
   const modal = useModal();
   return (
@@ -16,7 +16,11 @@ const InventoryReportButton = createWithRemoteLoader({
           size: 'large',
           footer: null,
           className: style['modal'],
-          children: <InventoryReport id={id} />
+          children: (
+            <div className={style['report-modal']}>
+              <InventoryReport id={id} detailId={detailId} />
+            </div>
+          )
         });
       }}
     />
