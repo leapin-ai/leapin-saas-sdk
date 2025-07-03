@@ -1,16 +1,17 @@
 import Report from './Report';
 import { createWithRemoteLoader } from '@kne/remote-loader';
 import IntlProvider from './IntlProvider';
+import classnames from 'classnames';
 import style from './style.module.scss';
 
 const ShareInventoryReport = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset']
-})(({ remoteModules, company_tenant_id, share_token }) => {
+})(({ remoteModules, className, company_tenant_id, share_token }) => {
   const [usePreset] = remoteModules;
   const { apis } = usePreset();
   return (
     <IntlProvider>
-      <div className={style['share-report']}>
+      <div className={classnames(style['share-report'], className)}>
         <Report
           exportDisabled
           apis={{

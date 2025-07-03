@@ -21,7 +21,7 @@ const Header = createWithRemoteLoader({
     <Flex vertical>
       <Flex justify="space-between" align="center" className={style['top-info']}>
         <div>{title}</div>
-        <Flex gap={12}>
+        <Flex gap={12} className="header-options">
           <LoadingButton
             size="small"
             icon={<DownloadIcon />}

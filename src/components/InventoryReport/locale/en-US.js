@@ -25,10 +25,6 @@ const locale = {
   mobility: 'Mobility',
   careerInterests: 'Career Interests',
 
-  high: 'High',
-  moderate: 'Moderate',
-  low: 'Low',
-
   suggestionsForImproving: 'Here are some suggestions for improving',
   scoreFiled: 'Score generation failed',
   scoreFiledDescription: 'The voice is unclear and cannot be recognized\nThose who fail to generate scores will not participate in the calculation of average scores',

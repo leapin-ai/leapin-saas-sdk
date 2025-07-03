@@ -10,6 +10,11 @@ const apis = {
         return import('./inventory/detail.json').then(({ default: data }) => data.data);
       }
     },
+    shareDetail: {
+      loader: () => {
+        return import('./inventory/detail.json').then(({ default: data }) => data.data);
+      }
+    },
     answer: {
       loader: () => {
         return import('./inventory/answer.json').then(({ default: data }) => data.data);
