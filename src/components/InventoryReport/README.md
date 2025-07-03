@@ -87,7 +87,7 @@ const BaseExample = createWithRemoteLoader({
 
   return (
     <PureGlobal preset={mockPreset}>
-      <ShareInventoryReport className="is-print"/>
+      <ShareInventoryReport className="is-print" />
     </PureGlobal>
   );
 });

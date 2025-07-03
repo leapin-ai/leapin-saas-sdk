@@ -47,9 +47,9 @@ NineSquareGrid是一个用于展示和编辑九宫格评估矩阵的React组件�
 - _NineSquareGrid(@components/NineSquareGrid)
 
 ```jsx
-const {default:NineSquareGrid} = _NineSquareGrid;
-const BaseExample = ()=>{
-    return <NineSquareGrid />;
+const { default: NineSquareGrid } = _NineSquareGrid;
+const BaseExample = () => {
+  return <NineSquareGrid />;
 };
 
 render(<BaseExample />);
