@@ -1,0 +1,27 @@
+{
+  "isFull": true,
+  "list": [
+    {
+      "title": "这里填写示例标题",
+      "description": "这里填写示例说明",
+      "code": "./base.js",
+      "scope": [
+        {
+          "name": "_NineSquareGrid",
+          "packageName": "@components/NineSquareGrid"
+        }
+      ]
+    },
+    {
+      "title": "这里填写示例标题",
+      "description": "这里填写示例说明",
+      "code": "./editor.js",
+      "scope": [
+        {
+          "name": "_NineSquareGrid",
+          "packageName": "@components/NineSquareGrid"
+        }
+      ]
+    }
+  ]
+}

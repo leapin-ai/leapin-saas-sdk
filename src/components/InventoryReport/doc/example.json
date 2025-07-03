@@ -38,6 +38,25 @@
           "packageName": "@kne/remote-loader"
         }
       ]
+    },
+    {
+      "title": "这里填写示例标题",
+      "description": "这里填写示例说明",
+      "code": "./print.js",
+      "scope": [
+        {
+          "name": "_InventoryReport",
+          "packageName": "@components/InventoryReport"
+        },
+        {
+          "name": "_mockPreset",
+          "packageName": "@root/mockPreset"
+        },
+        {
+          "name": "remoteLoader",
+          "packageName": "@kne/remote-loader"
+        }
+      ]
     }
   ]
 }

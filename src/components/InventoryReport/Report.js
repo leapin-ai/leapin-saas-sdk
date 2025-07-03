@@ -13,6 +13,7 @@ const Report = ({ title, exportDisabled, apis }) => {
       render={({ data }) => {
         return (
           <Flex vertical>
+            <div id="inventoryReportPrintTarget" />
             <Header data={data} title={title} exportDisabled={exportDisabled} apis={apis} />
             <Tabs
               className={style['report-content']}
