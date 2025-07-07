@@ -32,6 +32,7 @@ const DownloadReportButton = createWithRemoteLoader({
               urlList,
               options: {
                 waitForSelectors: ['#inventoryReportPrintTarget'],
+                waitForMaxTime: 60000,
                 waitForVisible: true,
                 margin: {
                   top: '6mm',
