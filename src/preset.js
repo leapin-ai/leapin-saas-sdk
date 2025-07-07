@@ -36,7 +36,6 @@ export const globalInit = async () => {
     registerInterceptors: interceptors => {
       interceptors.request.use(config => {
         (() => {
-          console.log('>>>>>>>', config.headers);
           if (config.headers['appName'] && config.headers['env']) {
             config.baseURL = `${window.runtimeGatewayUrl}/${config.headers['appName']}/${config.headers['env']}`;
             return;
@@ -47,8 +46,8 @@ export const globalInit = async () => {
           }
         })();
 
-        //delete config.headers['appName'];
-        //delete config.headers['env'];
+        delete config.headers['appName'];
+        delete config.headers['env'];
         return config;
       });
     },
