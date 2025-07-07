@@ -64,7 +64,7 @@ const BaseExample = createWithRemoteLoader({
   return (
     <PureGlobal preset={mockPreset}>
       <InventoryReportButton>点击显示报表</InventoryReportButton>
-      <DownloadReportButton ids={[1,2,3]}>点击下载批量报表</DownloadReportButton>
+      <DownloadReportButton ids={[1, 2, 3]}>点击下载批量报表</DownloadReportButton>
     </PureGlobal>
   );
 });
