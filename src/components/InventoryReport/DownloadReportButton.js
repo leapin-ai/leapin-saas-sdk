@@ -9,7 +9,7 @@ const DownloadReportButton = createWithRemoteLoader({
     <LoadingButton
       {...props}
       onClick={async () => {
-        if (!ids) {
+        if (typeof getIds === 'function') {
           ids = await getIds();
         }
         const urlList = await Promise.all(
