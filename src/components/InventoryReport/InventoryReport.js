@@ -45,7 +45,8 @@ const InventoryReport = createWithRemoteLoader({
                         }),
                         answer: Object.assign({}, apis.inventory.answer, {
                           urlParams: { id: item.id }
-                        })
+                        }),
+                        downloadReport: apis.inventory.downloadReport
                       }}
                     />
                   )

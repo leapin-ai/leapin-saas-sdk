@@ -9,14 +9,14 @@ import { ReactComponent as DownloadIcon } from './download.svg';
 import { ReactComponent as ShareIcon } from './share.svg';
 
 const Header = createWithRemoteLoader({
-  modules: ['components-core:Global@usePreset', 'components-core:Image', 'components-core:InfoPage@SplitLine', 'components-core:LoadingButton', 'components-core:Modal@useModal', 'components-core:File@download']
-})(({ remoteModules, data, title, exportDisabled, apis }) => {
-  const [usePreset, Image, SplitLine, LoadingButton, useModal, download] = remoteModules;
+  modules: ['components-core:Global@usePreset', 'components-core:Image', 'components-core:InfoPage@SplitLine', 'components-core:LoadingButton', 'components-core:Modal@useModal', 'components-core:File@downloadBlobFile']
+})(({ remoteModules, data, title, exportDisabled, apis, shareLink }) => {
+  const [usePreset, Image, SplitLine, LoadingButton, useModal, downloadBlobFile] = remoteModules;
   const { formatMessage } = useIntl();
   const { ajax } = usePreset();
   const modal = useModal();
   const { message } = App.useApp();
-
+  const userName = get(data, 'user.name', '');
   return (
     <Flex vertical>
       <Flex justify="space-between" align="center" className={style['top-info']}>
@@ -27,12 +27,39 @@ const Header = createWithRemoteLoader({
             icon={<DownloadIcon />}
             type="link"
             onClick={async () => {
-              const { data } = await ajax(Object.assign({}, apis.getShareLink));
+              let link;
+              if (!shareLink) {
+                const { data: resData } = await ajax(Object.assign({}, apis.getShareLink));
 
-              if (data.code !== 0) {
-                return;
+                if (resData.code !== 0) {
+                  return;
+                }
+                link = resData.data;
+              } else {
+                link = shareLink;
               }
-              download(data.data, 'report');
+
+              const { data } = await ajax(
+                Object.assign({}, apis.downloadReport, {
+                  data: {
+                    url: link,
+                    options: {
+                      waitForSelectors: ['#inventoryReportPrintTarget'],
+                      waitForVisible: true,
+                      margin: {
+                        top: '6mm',
+                        right: '6mm',
+                        bottom: '6mm',
+                        left: '6mm'
+                      },
+                      printBackground: true,
+                      displayHeaderFooter: false
+                    }
+                  }
+                })
+              );
+
+              downloadBlobFile(data, `Report-${userName || 'unknown'}.pdf`);
             }}
           />
           {!exportDisabled && (

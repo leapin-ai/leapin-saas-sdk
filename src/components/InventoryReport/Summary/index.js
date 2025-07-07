@@ -6,15 +6,15 @@ import ScoreRange from './ScoreRange';
 import { Flex, Divider } from 'antd';
 import Retention from './Retention';
 import style from './style.module.scss';
-import ninePng from './nine-square-grid.png';
+import { ReactComponent as NineSquareGridIcon } from './nine-square-grid.svg';
 import get from 'lodash/get';
 import transform from 'lodash/transform';
 import { useIntl } from '@kne/react-intl';
 
 const Summary = createWithRemoteLoader({
-  modules: ['components-core:InfoPage', 'components-core:Image', 'components-core:Global@useGlobalContext', 'components-core:StateTag']
+  modules: ['components-core:InfoPage', 'components-core:Global@useGlobalContext', 'components-core:StateTag']
 })(({ remoteModules, data }) => {
-  const [InfoPage, Image, useGlobalContext, StateTag] = remoteModules;
+  const [InfoPage, useGlobalContext, StateTag] = remoteModules;
   const { formatMessage } = useIntl();
   const { locale } = useGlobalContext();
 
@@ -74,7 +74,7 @@ const Summary = createWithRemoteLoader({
             <Flex gap={40}>
               <NineSquareGrid value={get(data, 'grid_data.index')} />
               <Flex className={style['nine-square-grid-right']} vertical gap={12} justify="center" align="center">
-                <Image src={ninePng} style={{ width: '64px', height: '64px' }} />
+                <NineSquareGridIcon style={{ width: '64px', height: '64px' }} />
                 <div style={{ fontSize: '12px' }}>{formatMessage({ id: 'nineSquareGrid' })}</div>
                 <div style={{ fontWeight: 'bold', textAlign: 'center' }}>{get(data, 'grid_data.title')}</div>
               </Flex>

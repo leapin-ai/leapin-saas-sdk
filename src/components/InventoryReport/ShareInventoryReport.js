@@ -14,6 +14,7 @@ const ShareInventoryReport = createWithRemoteLoader({
       <div className={classnames(style['share-report'], className)}>
         <Report
           exportDisabled
+          shareLink={window.href}
           apis={{
             detail: Object.assign({}, apis.inventory.shareDetail, {
               urlParams: { company_tenant_id, share_token },
@@ -22,7 +23,8 @@ const ShareInventoryReport = createWithRemoteLoader({
             answer: Object.assign({}, apis.inventory.shareAnswer, {
               urlParams: { company_tenant_id, share_token },
               params: { company_tenant_id, share_token }
-            })
+            }),
+            downloadReport: apis.inventory.downloadReport
           }}
         />
       </div>
