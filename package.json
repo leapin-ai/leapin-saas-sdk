@@ -1,6 +1,6 @@
 {
   "name": "@leapin-components/leapin-saas-sdk",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "leapin-saas-sdk",
   "scripts": {
     "init": "husky",
@@ -84,7 +84,7 @@
     "sass": "^1.75.0"
   },
   "dependencies": {
-    "@kne/axios-fetch": "^1.0.0",
+    "@kne/axios-fetch": "^1.0.8",
     "@kne/ensure-slash": "^0.1.0",
     "@kne/pay-details": "^0.1.1",
     "@kne/react-intl": "^0.1.9",

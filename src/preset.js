@@ -11,6 +11,7 @@ import { getApis } from '@components/Apis';
 window.PUBLIC_URL = window.runtimePublicUrl || process.env.PUBLIC_URL;
 
 const baseApiUrl = window.runtimeApiUrl || '';
+window.runtimeGatewayUrl = window.runtimeGatewayUrl || baseApiUrl || 'https://api.gw.leapin-ai.com';
 
 const getLocale = () => {
   let locale = localStorage.getItem('sdk_lan');
@@ -31,6 +32,25 @@ export const globalInit = async () => {
         'x-leapin-lang-code': getLocale(),
         Authorization: `Bearer ${cookie.get('token')}`
       };
+    },
+    registerInterceptors: interceptors => {
+      interceptors.request.use(config => {
+        (() => {
+          console.log('>>>>>>>', config.headers);
+          if (config.headers['appName'] && config.headers['env']) {
+            config.baseURL = `${window.runtimeGatewayUrl}/${config.headers['appName']}/${config.headers['env']}`;
+            return;
+          }
+          if (config.headers['appName']) {
+            config.baseURL = `${window.runtimeGatewayUrl}/${config.headers['appName']}`;
+            return;
+          }
+        })();
+
+        //delete config.headers['appName'];
+        //delete config.headers['env'];
+        return config;
+      });
     },
     errorHandler: error => message.error(error)
   });
@@ -69,7 +89,7 @@ export const globalInit = async () => {
     //url: 'http://localhost:3001',
     //tpl: '{{url}}',
     remote: 'components-core',
-    defaultVersion: '0.3.31'
+    defaultVersion: '0.3.32'
   };
   remoteLoaderPreset({
     remotes: {

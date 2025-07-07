@@ -8,6 +8,22 @@ const getApis = options => {
   );
   return {
     inventory: {
+      downloadReport: {
+        url: `${prefix}/v1/parseUrlToPdf`,
+        method: 'POST',
+        responseType: 'blob',
+        headers: {
+          appName: 'webprint'
+        }
+      },
+      downloadReportBatch: {
+        url: `${prefix}/v1/parseUrlToPdfBatch`,
+        method: 'POST',
+        responseType: 'blob',
+        headers: {
+          appName: 'webprint'
+        }
+      },
       userList: {
         url: `${prefix}/inventory/inventory/inventory_form/{id}/`,
         method: 'GET'
