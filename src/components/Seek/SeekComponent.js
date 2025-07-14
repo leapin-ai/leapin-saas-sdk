@@ -1,6 +1,6 @@
 import { createWithFetch } from '@kne/react-fetch';
 import { getOrLoadRemote } from '@kne/remote-loader';
-import { useEffect, useRef, memo } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
 import useRefCallback from '@kne/use-ref-callback';
 
@@ -15,8 +15,12 @@ const SeekComponent = createWithFetch({
       useRefCallback(ref);
       useEffect(() => {
         console.log('rerender');
-        const apis = window.SeekApi.render(ref.current, name, Object.assign({}, props, payload));
-        getApis && getApis(apis);
+        try {
+          const apis = window.SeekApi.render(ref.current, name, Object.assign({}, props, payload));
+          getApis && getApis(apis);
+        } catch (error) {
+          console.error('SeekApi渲染失败:', error);
+        }
       }, [name, props]);
       return <div ref={ref} />;
     },

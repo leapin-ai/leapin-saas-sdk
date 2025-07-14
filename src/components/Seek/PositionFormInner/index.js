@@ -7,16 +7,38 @@ import AdSelection from '../AdSelection';
 import QuestionSelection from '../QuestionSelection';
 import Branding from '../Branding';
 import { useState } from 'react';
+import { EnvironmentOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 
 const PositionFormInner = createWithRemoteLoader({
   modules: ['components-core:FormInfo', 'components-core:Global@usePreset', 'components-ckeditor:Editor']
 })(({ remoteModules, positionTitle, mode, getQuestionSelectionApis }) => {
   const [FormInfo, usePreset, Editor] = remoteModules;
-  const { useFormContext } = FormInfo;
-  const { SuperSelect, RadioGroup, TextArea, Upload } = FormInfo.fields;
+  const { useFormContext, MultiField } = FormInfo;
+  const { SuperSelect, RadioGroup, TextArea, Input, PhoneNumber } = FormInfo.fields;
   const { apis } = usePreset();
   const { formData, openApi } = useFormContext();
-  const [hasBranding, setHasBranding] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState({
+    features: {
+      branding: {
+        coverImageIndicator: false,
+        logoIndicator: false
+      },
+      searchBulletPoints: {
+        limit: 0
+      }
+    },
+    id: null,
+    label: null,
+    price: {
+      currency: null,
+      summary: null,
+      value: null,
+      tax: {
+        code: null,
+        value: null
+      }
+    }
+  });
   return (
     <>
       <FormInfo
@@ -40,16 +62,25 @@ const PositionFormInner = createWithRemoteLoader({
             }}
           />,
           <TextArea name="summary" label="Summary" rule="REQ" maxLength={150} block />,
+
+          <Input name="name" label="Contact Name" rule="REQ" prefix={<UserOutlined />} />,
+          <Input name="email" label="Contact Email" rule="REQ EMAIL" prefix={<MailOutlined />} />,
+          <PhoneNumber name="phone" label="Contact Phone" rule="REQ" format="string" />,
+          <Input name="address" label="Contact Address" rule="REQ" prefix={<EnvironmentOutlined />} />,
+
           <Editor name="detail" label="Description" rule="REQ" block />,
-          <Upload
-            name="video"
-            label="Video"
-            block
-            accept={['.mp4', '.webm', '.ogg']}
-            getPermission={type => {
-              return ['delete', 'preview'].indexOf(type) > -1;
-            }}
-          />,
+          // <Upload
+          //   name="video"
+          //   label="Video"
+          //   block
+          //   accept={['.mp4', '.webm', '.ogg']}
+          //   getPermission={type => {
+          //     return ['delete', 'preview'].indexOf(type) > -1;
+          //   }}
+          // />,
+          // 视频链接 校验是否符合youtube格式
+          <Input name="videoLink" label="Video Link" rule="YOUTUBE_URL" block />,
+          // 视频位置
           <RadioGroup
             name="videoPosition"
             label="Video position"
@@ -84,6 +115,7 @@ const PositionFormInner = createWithRemoteLoader({
           />,
           <AdSelection
             block
+            mode={mode}
             name="seekAdvertisementProductId"
             label="SEEK ad selection"
             rule="REQ"
@@ -94,15 +126,25 @@ const PositionFormInner = createWithRemoteLoader({
             category={formData.category}
             salary={formData.salary}
             workType={formData.workType}
-            onBrandingChange={setHasBranding}
+            onProductChange={setSelectedProduct}
           />,
           <Branding
             name="brandingId"
             label="Branding"
             account={formData.account}
             seekAdvertisementProduct={formData.seekAdvertisementProductId}
+            brandingFeatures={selectedProduct?.features?.branding}
             block
-            display={() => formData.account && formData.seekAdvertisementProductId && hasBranding}
+            display={() => formData.account && formData.seekAdvertisementProductId && selectedProduct?.features?.branding}
+          />,
+          <MultiField
+            name="keySellingPoints"
+            label="Key selling points"
+            rule="LEN-0-1000"
+            block
+            display={() => selectedProduct?.features?.searchBulletPoints?.limit > 0}
+            maxLength={selectedProduct?.features?.searchBulletPoints?.limit}
+            field={Input}
           />,
           <TextArea name="seekBillingReference" label="Billing reference" block rule="LEN-0-500" />,
           <TextArea name="seekHirerJobReference" label="Hirer job reference" block rule="LEN-0-500" />,
@@ -115,6 +157,7 @@ const PositionFormInner = createWithRemoteLoader({
             positionTitle={positionTitle}
             positionDetail={formData.detail}
             positionSummary={formData.summary}
+            seekApplicationQuestionnaire={formData.seekApplicationQuestionnaire}
             display={() => formData.account && formData.location && formData.category}
             account={formData.account}
             location={formData.location}
@@ -129,3 +172,4 @@ const PositionFormInner = createWithRemoteLoader({
 export default PositionFormInner;
 
 export { default as PAY_SALARY } from './PAY_SALARY';
+export { default as YOUTUBE_URL } from './YOUTUBE_URL';

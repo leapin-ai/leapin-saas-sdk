@@ -1,6 +1,6 @@
 import { createWithRemoteLoader } from '@kne/remote-loader';
 import useControlValue from '@kne/use-control-value';
-import { Flex, Card, Spin } from 'antd';
+import { Card, Flex, Spin } from 'antd';
 import Fetch from '@kne/react-fetch';
 import get from 'lodash/get';
 import classnames from 'classnames';
@@ -8,7 +8,7 @@ import style from './style.module.scss';
 
 const BrandingField = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset', 'components-core:Common@SimpleBar']
-})(({ remoteModules, account, seekAdvertisementProduct, ...props }) => {
+})(({ remoteModules, account, seekAdvertisementProduct, brandingFeatures, ...props }) => {
   const [value, onChange] = useControlValue(props);
   const [usePreset, SimpleBar] = remoteModules;
   const { ajax, apis } = usePreset();
@@ -23,6 +23,12 @@ const BrandingField = createWithRemoteLoader({
       render={({ data }) => {
         return (
           <SimpleBar forceVisible autoHide={false}>
+            {/*{(!brandingFeatures?.logoIndicator || !brandingFeatures?.coverImageIndicator) && (*/}
+            {/*  <div className={style['branding-description']}>*/}
+            {/*    {!brandingFeatures?.logoIndicator && 'The cover image will not appear in the ad based on the currently selected ad type.'}*/}
+            {/*    {!brandingFeatures?.coverImageIndicator && 'The logo will not appear in the ad based on the currently selected ad type.'}*/}
+            {/*  </div>*/}
+            {/*)}*/}
             <Flex wrap={false} gap={24} className={style['branding-list']}>
               {data.edges.map(({ node }) => {
                 return (
@@ -35,8 +41,7 @@ const BrandingField = createWithRemoteLoader({
                     cover={get(node, 'images[1].url') ? <img src={get(node, 'images[1].url')} alt="cover" /> : 'No cover image'}
                     onClick={() => {
                       onChange(get(node, 'id.value'));
-                    }}
-                  >
+                    }}>
                     <Flex vertical gap={8}>
                       <img src={get(node, 'images[0].url')} alt="logo" className={style['branding-logo']} />
                       <Card.Meta title={get(node, 'name')} />

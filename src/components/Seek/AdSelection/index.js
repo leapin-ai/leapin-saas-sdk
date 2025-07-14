@@ -2,20 +2,23 @@ import { createWithRemoteLoader } from '@kne/remote-loader';
 import SeekComponent from '../SeekComponent';
 import useControlValue from '@kne/use-control-value';
 import transformSalary from '../transformSalary';
-import get from 'lodash/get';
+import { Spin } from 'antd';
 
 const AdSelectionField = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset']
-})(({ remoteModules, account, location, category, positionTitle, salary, workType, onBrandingChange, ...props }) => {
+})(({ remoteModules, account, location, category, positionTitle, salary, workType, onProductChange, mode, ...props }) => {
   const [usePreset] = remoteModules;
   const { ajax, apis } = usePreset();
   const [value, onChange] = useControlValue(props);
+  if (mode === 'Update' && !value) {
+    return <Spin />;
+  }
   return (
     <SeekComponent
       name="adSelection"
       onChange={event => {
         const { selectedProduct } = event;
-        onBrandingChange && onBrandingChange(!!get(selectedProduct, 'features.branding'));
+        onProductChange && onProductChange(selectedProduct);
         if (value !== selectedProduct?.id) {
           onChange(selectedProduct?.id);
         }

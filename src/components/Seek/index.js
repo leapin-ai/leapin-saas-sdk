@@ -1,7 +1,7 @@
 import { createWithRemoteLoader } from '@kne/remote-loader';
 import { Flex, App, Button } from 'antd';
 import style from './style.module.scss';
-import PositionFormInner, { PAY_SALARY } from './PositionFormInner';
+import PositionFormInner, { PAY_SALARY,YOUTUBE_URL } from './PositionFormInner';
 import transformSalary from './transformSalary';
 import Fetch from '@kne/react-fetch';
 import get from 'lodash/get';
@@ -35,12 +35,14 @@ const CreatePosition = createWithRemoteLoader({
         brandingId: data.brandingId,
         summary: data.summary,
         detail: data.detail,
+        keySellingPoints: data.keySellingPoints,
         leapinJobId: props.positionId,
-        formData: data
+        formData: data,
+        personContacts: [{name: data.name, email: data.email, phone: data.phone, address: data.address}]
       },
-      data.videoUrl && {
+      data.videoLink && {
         seekVideo: {
-          url: data.videoUrl,
+          url: data.videoLink,
           seekAnzPositionCode: data.videoPosition
         }
       }
@@ -53,7 +55,7 @@ const CreatePosition = createWithRemoteLoader({
       data={{
         detail: props.positionDetail.replace(/\n/g, '<br/>')
       }}
-      rules={{ PAY_SALARY }}
+      rules={{ PAY_SALARY,YOUTUBE_URL }}
       onSubmit={async data => {
         const output = transformData(data);
 
