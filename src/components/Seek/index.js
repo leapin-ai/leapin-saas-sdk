@@ -133,9 +133,17 @@ const EditPosition = createWithRemoteLoader({
           offeredRemunerationPackage: transformSalary(data.salary),
           summary: data.summary,
           detail: data.detail,
+          keySellingPoints: data.keySellingPoints,
           leapinJobId: props.positionId,
-          formData: data
+          formData: data,
+          personContacts: [{name: data.name, email: data.email, phone: data.phone, address: data.address}],
         };
+        if (data.videoLink) {
+          output.seekVideo = {
+            url: data.videoLink,
+            seekAnzPositionCode: data.videoPosition
+          };
+        }
 
         const { data: resData } = await ajax(
           Object.assign({}, apis.seek.update, {

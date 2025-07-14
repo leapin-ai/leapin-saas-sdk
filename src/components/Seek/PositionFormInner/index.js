@@ -7,7 +7,7 @@ import AdSelection from '../AdSelection';
 import QuestionSelection from '../QuestionSelection';
 import Branding from '../Branding';
 import { useState } from 'react';
-import { EnvironmentOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
+import { EnvironmentOutlined, MailOutlined, UserOutlined, PhoneOutlined } from '@ant-design/icons';
 
 const PositionFormInner = createWithRemoteLoader({
   modules: ['components-core:FormInfo', 'components-core:Global@usePreset', 'components-ckeditor:Editor']
@@ -65,8 +65,8 @@ const PositionFormInner = createWithRemoteLoader({
 
           <Input name="name" label="Contact Name" rule="REQ" prefix={<UserOutlined />} />,
           <Input name="email" label="Contact Email" rule="REQ EMAIL" prefix={<MailOutlined />} />,
-          <PhoneNumber name="phone" label="Contact Phone" rule="REQ" format="string" />,
-          <Input name="address" label="Contact Address" rule="REQ" prefix={<EnvironmentOutlined />} />,
+          <Input name="phone" label="Contact Phone" rule="REQ" prefix={<PhoneOutlined />} />,
+          // <Input name="address" label="Contact Address" rule="REQ" prefix={<EnvironmentOutlined />} />,
 
           <Editor name="detail" label="Description" rule="REQ" block />,
           // <Upload
