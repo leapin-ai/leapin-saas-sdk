@@ -18,7 +18,7 @@ const getLocale = () => {
   if (locale) {
     localStorage.setItem('x-leapin-lang-code', locale);
   } else {
-    locale = localStorage.getItem('x-leapin-lang-code') || 'zh-Hans';
+    locale = localStorage.getItem('x-leapin-lang-code');
   }
 
   return locale;
@@ -123,7 +123,7 @@ export const globalInit = async () => {
     ajax,
     locale: (() => {
       const locale = getLocale();
-      if (locale === 'zh-Hans') {
+      if (locale === 'zh-Hans' || window.navigator.language === 'zh-CN') {
         return 'zh-CN';
       }
       return 'en-US';

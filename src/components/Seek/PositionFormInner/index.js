@@ -115,6 +115,7 @@ const PositionFormInner = createWithRemoteLoader({
           />,
           <AdSelection
             block
+            mode={mode}
             name="seekAdvertisementProductId"
             label="SEEK ad selection"
             rule="REQ"

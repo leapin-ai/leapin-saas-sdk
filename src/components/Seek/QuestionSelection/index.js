@@ -1,6 +1,7 @@
 import { createWithRemoteLoader } from '@kne/remote-loader';
 import SeekComponent from '../SeekComponent';
 import useControlValue from '@kne/use-control-value';
+import { Spin } from 'antd';
 
 const QuestionSelectionField = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset']
@@ -8,6 +9,10 @@ const QuestionSelectionField = createWithRemoteLoader({
   const [usePreset] = remoteModules;
   const { ajax, apis } = usePreset();
   const [value] = useControlValue(props);
+
+  if (mode === 'Update' && !value) {
+    return <Spin />;
+  }
 
   return (
     <SeekComponent
