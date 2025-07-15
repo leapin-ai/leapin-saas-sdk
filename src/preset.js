@@ -123,7 +123,10 @@ export const globalInit = async () => {
     ajax,
     locale: (() => {
       const locale = getLocale();
-      if (locale === 'zh-Hans' || window.navigator.language === 'zh-CN') {
+      if (!locale && window.navigator.language === 'zh-CN') {
+        return 'zh-CN';
+      }
+      if (locale === 'zh-Hans') {
         return 'zh-CN';
       }
       return 'en-US';
