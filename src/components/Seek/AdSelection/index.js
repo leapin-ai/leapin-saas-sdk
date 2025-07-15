@@ -6,13 +6,14 @@ import { Spin } from 'antd';
 
 const AdSelectionField = createWithRemoteLoader({
   modules: ['components-core:Global@usePreset']
-})(({ remoteModules, account, location, category, positionTitle, salary, workType, onProductChange, mode, ...props }) => {
+})(({ remoteModules, account, location, category, positionTitle, profileId, salary, workType, onProductChange, mode, ...props }) => {
   const [usePreset] = remoteModules;
   const { ajax, apis } = usePreset();
   const [value, onChange] = useControlValue(props);
   if (mode === 'Update' && !value) {
     return <Spin />;
   }
+
   return (
     <SeekComponent
       name="adSelection"
@@ -26,6 +27,7 @@ const AdSelectionField = createWithRemoteLoader({
       selectedAdvertisementProductId={value}
       payload={{
         positionProfile: {
+          profileId: profileId,
           jobCategories: category,
           positionLocation: location?.value,
           positionOrganizations: account?.value,
