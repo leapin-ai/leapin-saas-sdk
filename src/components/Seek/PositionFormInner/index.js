@@ -61,14 +61,14 @@ const PositionFormInner = createWithRemoteLoader({
               });
             }}
           />,
-          <TextArea name="summary" label="Summary" rule="REQ" maxLength={150} block />,
+          <TextArea name="summary" label="Summary" rule="REQ LEN-0-150" block showCount />,
 
           <Input name="name" label="Contact Name" rule="REQ" prefix={<UserOutlined />} />,
           <Input name="email" label="Contact Email" rule="REQ EMAIL" prefix={<MailOutlined />} />,
           <Input name="phone" label="Contact Phone" rule="REQ" prefix={<PhoneOutlined />} />,
           // <Input name="address" label="Contact Address" rule="REQ" prefix={<EnvironmentOutlined />} />,
 
-          <Editor name="detail" label="Description" rule="REQ" block />,
+          <Editor name="detail" label="Description" rule="REQ" block maxLength={15000} />,
           // <Upload
           //   name="video"
           //   label="Video"
@@ -141,7 +141,7 @@ const PositionFormInner = createWithRemoteLoader({
           <MultiField
             name="keySellingPoints"
             label="Key selling points"
-            rule="LEN-0-1000"
+            rule="LEN-0-80"
             block
             display={() => selectedProduct?.features?.searchBulletPoints?.limit > 0}
             maxLength={selectedProduct?.features?.searchBulletPoints?.limit}

@@ -39,6 +39,7 @@ const AdSelectionField = createWithRemoteLoader({
       getAuthToken={async () => {
         const { data: resData } = await ajax(
           Object.assign({}, apis.seek.getToken, {
+            cache: 'seek-token',
             data: { hirerId: account?.value }
           })
         );
