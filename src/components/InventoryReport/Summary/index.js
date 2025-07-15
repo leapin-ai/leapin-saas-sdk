@@ -172,10 +172,10 @@ const Summary = createWithRemoteLoader({
                         <div className={style['card-box-grey-content']}>{formatMessage({ id: 'scoreFiledDescription' })}</div>
                       </>
                     )}
-                    <div>{interpretation}</div>
+                    <div style={{ fontWeight: 'bold' }}>{interpretation}</div>
                     {suggestions && suggestions.length > 0 && (
                       <>
-                        <div>{formatMessage({ id: 'suggestionsForImproving' })}</div>
+                        <div style={{ fontWeight: 'bold' }}>{formatMessage({ id: 'suggestionsForImproving' })}</div>
                         <div className={style['card-box-grey-content']}>
                           {suggestions.map((str, index) => (
                             <div key={index}>{str}</div>
