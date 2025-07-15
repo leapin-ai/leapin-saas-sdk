@@ -7,11 +7,11 @@ import AdSelection from '../AdSelection';
 import QuestionSelection from '../QuestionSelection';
 import Branding from '../Branding';
 import { useState } from 'react';
-import { EnvironmentOutlined, MailOutlined, UserOutlined, PhoneOutlined } from '@ant-design/icons';
+import { MailOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
 
 const PositionFormInner = createWithRemoteLoader({
   modules: ['components-core:FormInfo', 'components-core:Global@usePreset', 'components-ckeditor:Editor']
-})(({ remoteModules, positionTitle, mode, getQuestionSelectionApis }) => {
+})(({ remoteModules, positionTitle, mode, profileId, getQuestionSelectionApis }) => {
   const [FormInfo, usePreset, Editor] = remoteModules;
   const { useFormContext, MultiField } = FormInfo;
   const { SuperSelect, RadioGroup, TextArea, Input, PhoneNumber } = FormInfo.fields;
@@ -120,6 +120,7 @@ const PositionFormInner = createWithRemoteLoader({
             label="SEEK ad selection"
             rule="REQ"
             positionTitle={positionTitle}
+            profileId={profileId}
             display={() => formData.account && formData.location && formData.category}
             account={formData.account}
             location={formData.location}

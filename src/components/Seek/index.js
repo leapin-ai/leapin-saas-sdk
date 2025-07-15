@@ -115,6 +115,7 @@ const EditPosition = createWithRemoteLoader({
   const { Form, SubmitButton } = FormInfo;
   const { apis, ajax } = usePreset();
   const { message } = App.useApp();
+
   return (
     <Form
       className={style['form']}
@@ -157,7 +158,7 @@ const EditPosition = createWithRemoteLoader({
         reload && reload();
       }}
     >
-      <PositionFormInner {...props} mode="Update" getQuestionSelectionApis={apis => {}} />
+      <PositionFormInner {...props} mode="Update" profileId={data.profileId} getQuestionSelectionApis={apis => {}} />
       <Flex justify="center" gap={20}>
         <SubmitButton>Submit</SubmitButton>
         <Button onClick={reload}>Cancel</Button>
