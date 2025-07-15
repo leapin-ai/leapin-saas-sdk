@@ -56,7 +56,7 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-
+  position: relative;
   &:before {
     content: '';
     display: block;

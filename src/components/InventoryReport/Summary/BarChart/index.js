@@ -47,7 +47,7 @@ const BarChart = ({ className, columns = [], data = {}, colors = ['#FFF5E3', '#F
                     '--bar-value': `${value}%`
                   }}
                 >
-                  {value}
+                  {Math.round(value)}
                 </div>
               </Flex>
             </Flex>
