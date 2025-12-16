@@ -9,7 +9,7 @@ const renderRoot = async (root, options) => {
 
   if (process.env.NODE_ENV === 'development') {
     await import('@kne/modules-dev/dist/create-entry.css');
-    await import('@kne/modules-dev/dist/create-entry').then(module => {
+    await import('@kne/modules-dev/dist/create-entry.modern').then(module => {
       const Entry = module.default(({ globalPreset }) => <App globalPreset={globalPreset} options={options} />);
       root.render(
         <BrowserRouter>

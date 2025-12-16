@@ -44,9 +44,9 @@ const Retention = createWithRemoteLoader({
             return (
               <Flex vertical gap={4}>
                 <div style={{ width: '150px' }}>
-                  <Progress percent={value} type="line" className={style['performance-progress']} />
+                  <Progress percent={value} type="line" className={style['performance-progress']} format={percent => percent}/>
                 </div>
-                <Typography.Link className={style['performance-description']}>{data.performanceLevel}</Typography.Link>
+                {/*<Typography.Link className={style['performance-description']}>{data.performanceLevel}</Typography.Link>*/}
               </Flex>
             );
           }
@@ -58,7 +58,7 @@ const Retention = createWithRemoteLoader({
             return (
               <Flex vertical gap={4}>
                 <div style={{ width: '150px' }}>
-                  <Progress percent={value} type="line" className={style['performance-progress']} />
+                  <Progress percent={value} type="line" className={style['performance-progress']} format={percent => percent} />
                 </div>
                 <Typography.Link className={style['performance-description']}>{formatMessage({ id: 'meetsExpectations' })}</Typography.Link>
               </Flex>

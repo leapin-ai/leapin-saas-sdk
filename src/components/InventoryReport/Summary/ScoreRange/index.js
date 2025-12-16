@@ -7,11 +7,6 @@ const ScoreRange = ({ value, title, range, point, unit = 20 }) => {
     <Flex vertical className={style['score-range']} gap={20}>
       {title && <div>{title}</div>}
       <Flex className={style['line']}>
-        {Array.from({ length: parseInt(100 / unit) }).map((item, index) => {
-          const isCurrent = value >= index * unit && value < (index + 1) * unit;
-          return <div className={style['line-item']}>{index * unit}</div>;
-        })}
-        <div className={style['line-item']}>100</div>
         {point && point > 0 ? (
           <div
             className={style['line-point']}
@@ -29,6 +24,11 @@ const ScoreRange = ({ value, title, range, point, unit = 20 }) => {
             }}
           />
         ) : null}
+        {Array.from({ length: parseInt(100 / unit) }).map((item, index) => {
+          const isCurrent = value >= index * unit && value < (index + 1) * unit;
+          return <div className={style['line-item']}>{index * unit}</div>;
+        })}
+        <div className={classnames(style['line-item'], style['line-item-last'])}>100</div>
       </Flex>
     </Flex>
   );

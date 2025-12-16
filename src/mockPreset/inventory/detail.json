@@ -34,9 +34,9 @@
             "dimension_weight": 100,
             "competency_id": 134,
             "competency": "自我驱动",
-            "avg_score": 82.0,
+            "avg_score": 0,
             "score_description": "优势",
-            "weight_score": 82.0,
+            "weight_score": 0,
             "score_interpretation": {
               "en": "The employee demonstrates a strong sense of self-motivation, which is a key trait for success in leadership roles.",
               "zh": "员工展现出强烈的自我驱动能力，这是领导角色成功的关键特质。"
@@ -77,8 +77,8 @@
             },
             "soft_score_range": {
               "id": 135,
-              "range": [0, 0],
-              "avg_score": 0
+              "range": [60, 90],
+              "avg_score": 70
             }
           },
           {

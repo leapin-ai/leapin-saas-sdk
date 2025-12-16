@@ -37,8 +37,8 @@
   color: var(--font-color-grey-1);
   padding-top: 12px;
   position: relative;
-
-  &:last-child {
-    flex: none;
+  &.line-item-last{
+    position: absolute;
+    right: 0;
   }
 }
