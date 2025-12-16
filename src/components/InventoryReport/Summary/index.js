@@ -89,15 +89,21 @@ const Summary = createWithRemoteLoader({
             />
           </Flex>
           <Flex vertical gap={24} className={style['card-box-grey']}>
-            <Flex vertical gap={4}>
-              <div className={style['card-box-grey-title']}>{formatMessage({ id: 'traits' })}</div>
-              <div className={style['card-box-grey-content']}>{get(data, 'grid_data.description')}</div>
-            </Flex>
-            <Divider className={style['card-box-grey-divider']} />
-            <Flex vertical gap={4}>
-              <div className={style['card-box-grey-title']}>{formatMessage({ id: 'actionRequired' })}</div>
-              <div className={style['card-box-grey-content']}>{get(data, 'grid_data.recommendation')}</div>
-            </Flex>
+            {get(data, 'grid_data.description') && (
+              <>
+                <Flex vertical gap={4}>
+                  <div className={style['card-box-grey-title']}>{formatMessage({ id: 'traits' })}</div>
+                  <div className={style['card-box-grey-content']}>{get(data, 'grid_data.description')}</div>
+                </Flex>
+                {get(data, 'grid_data.recommendation') && <Divider className={style['card-box-grey-divider']} />}
+              </>
+            )}
+            {get(data, 'grid_data.recommendation') && (
+              <Flex vertical gap={4}>
+                <div className={style['card-box-grey-title']}>{formatMessage({ id: 'actionRequired' })}</div>
+                <div className={style['card-box-grey-content']}>{get(data, 'grid_data.recommendation')}</div>
+              </Flex>
+            )}
             {strength && strength.length > 0 && (
               <Flex vertical gap={4}>
                 <div className={style['card-box-grey-title']}>{formatMessage({ id: 'strength' })}</div>
@@ -172,15 +178,19 @@ const Summary = createWithRemoteLoader({
                         <div className={style['card-box-grey-content']}>{formatMessage({ id: 'scoreFiledDescription' })}</div>
                       </>
                     )}
-                    <div style={{ fontWeight: 'bold' }}>{interpretation}</div>
-                    {suggestions && suggestions.length > 0 && (
+                    {score > 0 && (
                       <>
-                        <div style={{ fontWeight: 'bold' }}>{formatMessage({ id: 'suggestionsForImproving' })}</div>
-                        <div className={style['card-box-grey-content']}>
-                          {suggestions.map((str, index) => (
-                            <div key={index}>{str}</div>
-                          ))}
-                        </div>
+                        <div style={{ fontWeight: 'bold' }}>{interpretation}</div>
+                        {suggestions && suggestions.length > 0 && (
+                          <>
+                            <div style={{ fontWeight: 'bold' }}>{formatMessage({ id: 'suggestionsForImproving' })}</div>
+                            <div className={style['card-box-grey-content']}>
+                              {suggestions.map((str, index) => (
+                                <div key={index}>{str}</div>
+                              ))}
+                            </div>
+                          </>
+                        )}
                       </>
                     )}
                   </Flex>
