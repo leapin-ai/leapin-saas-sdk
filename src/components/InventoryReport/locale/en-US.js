@@ -7,6 +7,7 @@ const locale = {
   yearOfEmployment: 'Year of Employment',
   reportTo: 'Report to',
   aiTalentSummary: 'AI Talent Summary',
+  summary: 'Summary',
   nineSquareGrid: '9 Box Position',
 
   potential: 'Potential',

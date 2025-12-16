@@ -7,6 +7,7 @@ const locale = {
   yearOfEmployment: '入职年份',
   reportTo: '汇报对象',
   aiTalentSummary: 'AI 人才总结',
+  summary: '总结',
   nineSquareGrid: '九宫格定位',
 
   potential: '潜力',
