@@ -1,180 +1,709 @@
 {
   "code": 0,
+  "error_msg": "",
   "data": {
-    "id": 421,
+    "id": 787,
     "user": {
-      "id": 1706,
-      "name": "Support Wang",
+      "id": 1095,
+      "name": "Iris",
       "avatar": "",
       "email": "",
-      "mobile": "18301883522",
-      "departments": ["财务部"],
-      "superior": "nina",
-      "position": "出纳",
-      "position_id": "674",
-      "education_level": null,
-      "marital": null,
+      "mobile": "18221544964",
+      "departments": [
+        "人事行政部"
+      ],
+      "superior": "Sara",
+      "position": "HRM",
+      "position_id": "408",
+      "education_level": 5,
+      "marital": 2,
       "job_year": null,
       "year_in_company": null
     },
     "dimension_answers_score": [
       {
-        "id": 205,
+        "id": 283,
         "dimension_template": "潜力",
-        "dimension_template_id": 41,
+        "dimension_template_id": 28,
         "dimension_template_label": 1,
-        "total_topics_num": 54,
+        "total_topics_num": 18,
         "template_type": 1,
-        "question": [201, 200, 199, 198, 197, 196],
-        "weight": 100,
-        "question_competency": [136, 136, 135, 135, 134, 134],
+        "question": [
+          659,
+          658,
+          657,
+          656,
+          655,
+          654
+        ],
+        "weight": 50,
+        "question_competency": [
+          211,
+          118,
+          209,
+          208,
+          207,
+          206
+        ],
         "inventory_user_answers": [
           {
-            "ai_weight": 100.0,
-            "dimension_weight": 100,
-            "competency_id": 134,
+            "ai_weight": 50.0,
+            "dimension_weight": 50,
+            "competency_id": 118,
+            "competency": "分析决策能力",
+            "avg_score": 3.0,
+            "score_description": "劣势",
+            "weight_score": 1.5,
+            "score_interpretation": {
+              "en": "The candidate's analytical decision-making ability is currently rated as 'To Be Improved' with a score of 3 out of a possible higher score, indicating a need for development in this area. This suggests that while the candidate has some basic competencies in making decisions based on analysis, there is significant room for growth and enhancement of these skills.",
+              "zh": "候选人的分析决策能力目前被评为'待发展'，得分为3分，表明在这一领域需要进一步发展。这表明候选人在基于分析做出决策的基本能力上有一定的表现，但在这些技能上还有很大的提升空间。"
+            },
+            "score_suggestions": {
+              "en": [
+                "Encourage the candidate to participate in decision-making workshops or training sessions to enhance analytical skills.",
+                "Recommend that the candidate practice decision-making in low-risk scenarios to build confidence and refine decision-making processes.",
+                "Advocate for the candidate to seek mentorship from experienced colleagues to learn from their analytical approaches and decision-making strategies."
+              ],
+              "zh": [
+                "鼓励候选人参加决策制定工作坊或培训课程，以增强分析技能。",
+                "建议候选人在低风险情境下练习决策制定，以建立信心并完善决策流程。",
+                "提倡候选人寻求经验丰富的同事的指导，学习他们的分析方法和决策策略。"
+              ]
+            },
+            "soft_score_range": {
+              "id": 118,
+              "range": [
+                81,
+                96
+              ],
+              "avg_score": null
+            }
+          },
+          {
+            "ai_weight": 50.0,
+            "dimension_weight": 50,
+            "competency_id": 206,
             "competency": "自我驱动",
-            "avg_score": 0,
-            "score_description": "优势",
-            "weight_score": 0,
+            "avg_score": 2.0,
+            "score_description": "劣势",
+            "weight_score": 1.0,
             "score_interpretation": {
-              "en": "The employee demonstrates a strong sense of self-motivation, which is a key trait for success in leadership roles.",
-              "zh": "员工展现出强烈的自我驱动能力，这是领导角色成功的关键特质。"
+              "en": "The candidate's alignment with the 'Self-motivation' competency is classified as 'To Be Improved', indicating a need for significant development in this area. Currently, the candidate scores a 2 out of a possible higher score, suggesting that there is room for substantial growth. This implies that while the candidate may possess some foundational self-motivation skills, they are not yet fully leveraging these to drive their performance or initiative in a work setting.",
+              "zh": "候选人在'自我驱动'能力项上的匹配度被分类为'待发展'，表明在此领域需要显著的提升。目前，候选人得分为2分，满分更高，暗示着有很大的成长空间。这意味着虽然候选人可能具备一些基础的自我驱动技能，但他们尚未完全利用这些技能来推动工作场所的表现或主动性。"
             },
             "score_suggestions": {
               "en": [
-                "Continue to foster a proactive attitude by setting personal goals that align with the company's objectives.",
-                "Encourage the development of self-motivation in team members by sharing personal strategies and experiences.",
-                "Seek opportunities for further professional development to maintain a high level of self-motivation and leadership."
+                "Encourage the candidate to set personal goals that align with the project objectives to foster a sense of purpose and drive.",
+                "Provide opportunities for the candidate to take on additional responsibilities to build confidence and autonomy in their role.",
+                "Implement regular check-ins to discuss progress and provide constructive feedback, which can help the candidate to better understand their strengths and areas for improvement."
               ],
-              "zh": ["通过设定与公司目标一致的个人目标，继续培养积极主动的态度。", "通过分享个人策略和经验，鼓励团队成员发展自我驱动能力。", "寻求进一步的职业发展机会，以保持高水平的自我驱动力和领导力。"]
+              "zh": [
+                "鼓励候选人设定与项目目标一致的个人目标，以培养目的感和驱动力。",
+                "为候选人提供承担额外责任的机会，以建立在其角色中的自信和自主性。",
+                "实施定期检查，讨论进展并提供建设性反馈，这可以帮助候选人更好地了解自己的优势和改进领域。"
+              ]
             },
             "soft_score_range": {
-              "id": 134,
-              "range": [0, 0],
-              "avg_score": 0
+              "id": 206,
+              "range": [
+                81,
+                96
+              ],
+              "avg_score": null
             }
           },
           {
-            "ai_weight": 100.0,
-            "dimension_weight": 100,
-            "competency_id": 135,
+            "ai_weight": 50.0,
+            "dimension_weight": 50,
+            "competency_id": 207,
             "competency": "学习能力",
-            "avg_score": 80.0,
-            "score_description": "优势",
-            "weight_score": 80.0,
+            "avg_score": 5.0,
+            "score_description": "劣势",
+            "weight_score": 2.5,
             "score_interpretation": {
-              "en": "The employee demonstrates a strong capacity for learning, with an excellent match and a score of 80 points indicating a solid foundation in this competency.",
-              "zh": "员工展现出较强的学习能力，匹配度评为优秀，得分80分，表明在这一能力项上有着坚实的基础。"
+              "en": "The candidate's learning ability is currently rated as 'To Be Improved' with a score of 5, indicating that there is significant room for development in this area. This suggests that while the candidate may possess some foundational skills, they may not be able to quickly adapt to new information or processes as effectively as desired. In the context of the 20251215 iris test project, this could present challenges in terms of keeping pace with evolving project requirements and mastering new tools or methodologies.",
+              "zh": "候选人的学习能力当前被评为'待发展'，得分为5分，表明在这一领域有很大的提升空间。这表明候选人可能具备一些基础技能，但可能无法像预期的那样快速适应新信息或流程。在20251215 iris test项目中，这可能在跟上项目需求的变化和掌握新工具或方法论方面带来挑战。"
             },
             "score_suggestions": {
               "en": [
-                "Consider engaging in continuous professional development courses to keep pace with industry advancements.",
-                "Encourage participation in workshops and seminars to broaden knowledge and skills.",
-                "Implement a mentorship program to foster learning from experienced colleagues."
+                "Encourage the candidate to engage in continuous learning by providing access to relevant training programs and resources.",
+                "Implement a mentorship program where the candidate can learn from more experienced colleagues to accelerate their learning curve.",
+                "Set clear and achievable learning objectives with regular feedback to help the candidate understand their progress and areas for improvement."
               ],
-              "zh": ["考虑参与持续的职业发展课程，以跟上行业进步的步伐。", "鼓励参加工作坊和研讨会，以拓宽知识和技能。", "实施导师计划，以促进从经验丰富的同事那里学习。"]
+              "zh": [
+                "鼓励候选人参与持续学习，提供相关培训项目和资源。",
+                "实施导师计划，让候选人能够从更有经验的同事那里学习，以加快他们的学习曲线。",
+                "设定清晰可实现的学习目标，并提供定期反馈，帮助候选人了解他们的进步和改进领域。"
+              ]
             },
             "soft_score_range": {
-              "id": 135,
-              "range": [60, 90],
-              "avg_score": 70
+              "id": 207,
+              "range": [
+                81,
+                96
+              ],
+              "avg_score": null
             }
           },
           {
-            "ai_weight": 100.0,
-            "dimension_weight": 100,
-            "competency_id": 136,
+            "ai_weight": 50.0,
+            "dimension_weight": 50,
+            "competency_id": 208,
             "competency": "创新能力",
-            "avg_score": 80.0,
-            "score_description": "优势",
-            "weight_score": 80.0,
+            "avg_score": 5.0,
+            "score_description": "劣势",
+            "weight_score": 2.5,
             "score_interpretation": {
-              "en": "The candidate demonstrates a strong innovative capacity, with a score of 80 indicating a high level of proficiency in this area.",
-              "zh": "候选人展现出了较强的创新能力，80分的得分表明在这一领域有着较高的熟练度。"
+              "en": "The candidate's innovation ability is currently rated as 'To Be Improved' with a score of 5, indicating that there is significant room for enhancement. This suggests that while the candidate may possess some foundational skills in this area, they are not yet demonstrating a strong capacity for innovation, which is crucial for the project 20251215 iris test.",
+              "zh": "候选人的创新能力目前被评为“待发展”，得分为5分，表明有很大的提升空间。这表明候选人虽然可能具备一些基础技能，但尚未展现出较强的创新能力，这对于项目20251215 iris test来说是至关重要的。"
             },
             "score_suggestions": {
               "en": [
-                "Continue to foster a culture of innovation by encouraging the exploration of new ideas and approaches.",
-                "Invest in professional development opportunities that focus on enhancing creative thinking and problem-solving skills.",
-                "Implement a system to capture and evaluate innovative ideas, ensuring that they are considered and potentially implemented."
+                "Encourage the candidate to participate in workshops and training sessions focused on innovation and creative thinking to build a stronger foundation.",
+                "Assign the candidate to projects that require out-of-the-box thinking and problem-solving to challenge and develop their innovative skills.",
+                "Provide regular feedback and mentorship to help the candidate understand their areas of improvement and how to apply innovative strategies in their work."
               ],
-              "zh": ["继续培养创新文化，鼓励探索新的想法和方法。", "投资于专业发展机会，专注于增强创造性思维和解决问题的能力。", "实施一个系统来捕捉和评估创新想法，确保它们被考虑并有可能被实施。"]
+              "zh": [
+                "鼓励候选人参加专注于创新和创造性思维的研讨会和培训课程，以建立更坚实的基础。",
+                "分配候选人到需要跳出常规思维和解决问题的项目中，挑战并发展他们的创新技能。",
+                "提供定期反馈和指导，帮助候选人了解他们的改进领域以及如何在他们的工作中应用创新策略。"
+              ]
             },
             "soft_score_range": {
-              "id": 136,
-              "range": [0, 0],
-              "avg_score": 0
+              "id": 208,
+              "range": [
+                80,
+                95
+              ],
+              "avg_score": null
+            }
+          },
+          {
+            "ai_weight": 50.0,
+            "dimension_weight": 50,
+            "competency_id": 209,
+            "competency": "适应能力",
+            "avg_score": 4.0,
+            "score_description": "劣势",
+            "weight_score": 2.0,
+            "score_interpretation": {
+              "en": "The candidate's adaptability is currently rated as 'To Be Improved' with a score of 4, indicating that there is significant room for enhancement in this area. This suggests that while the candidate may possess some basic ability to adjust to new situations, there are notable areas where improvement is necessary to meet the demands of the project.",
+              "zh": "候选人的适应能力目前被评为“待发展”，得分为4分，表明在这一领域有较大的提升空间。这表明尽管候选人可能具备一些基本的适应新情况的能力，但在需要改进的领域中存在明显的不足，以满足项目的需求。"
+            },
+            "score_suggestions": {
+              "en": [
+                "Encourage the candidate to participate in team-building activities to enhance their ability to work in dynamic environments.",
+                "Provide the candidate with opportunities for cross-functional training to broaden their skillset and improve adaptability.",
+                "Implement regular feedback sessions to help the candidate identify areas of weakness and develop strategies for personal growth."
+              ],
+              "zh": [
+                "鼓励候选人参与团队建设活动，以增强其在动态环境中工作的能力。",
+                "为候选人提供跨职能培训的机会，以扩大其技能范围并提高适应能力。",
+                "实施定期反馈会议，帮助候选人识别弱点并制定个人成长策略。"
+              ]
+            },
+            "soft_score_range": {
+              "id": 209,
+              "range": [
+                83,
+                96
+              ],
+              "avg_score": null
+            }
+          },
+          {
+            "ai_weight": 50.0,
+            "dimension_weight": 50,
+            "competency_id": 211,
+            "competency": "战略家素质",
+            "avg_score": 7.0,
+            "score_description": "劣势",
+            "weight_score": 3.5,
+            "score_interpretation": {
+              "en": "The candidate's strategic acumen is currently rated as 'To Be Improved' with a score of 7, indicating that there is significant room for development in this area. While the candidate demonstrates a basic understanding of strategic thinking, the current performance suggests that they may struggle with complex strategic planning and execution.",
+              "zh": "候选人的战略家素质目前被评为'待发展'，得分为7分，表明在这一领域有较大的提升空间。虽然候选人展示了对战略思维的基本理解，但当前的表现表明，他们可能在复杂的战略规划和执行方面存在挑战。"
+            },
+            "score_suggestions": {
+              "en": [
+                "Encourage the candidate to participate in strategic planning workshops or courses to enhance their understanding of strategic frameworks and tools.",
+                "Assign the candidate to work on projects that require strategic thinking to gain practical experience and improve their strategic capabilities.",
+                "Provide regular feedback and mentorship to help the candidate recognize areas for improvement and develop a more strategic mindset."
+              ],
+              "zh": [
+                "鼓励候选人参加战略规划研讨会或课程，以增强他们对战略框架和工具的理解。",
+                "分配候选人参与需要战略思维的项目，以获得实践经验并提高他们的战略能力。",
+                "提供定期反馈和指导，帮助候选人识别改进领域并培养更具战略性的思维模式。"
+              ]
+            },
+            "soft_score_range": {
+              "id": 211,
+              "range": [
+                80,
+                93
+              ],
+              "avg_score": null
             }
           }
         ],
         "ability_analysis": {
-          "advantage": ["自我驱动", "学习能力", "创新能力"],
+          "advantage": [],
           "medium": [],
-          "to_be_improved": []
+          "to_be_improved": [
+            "分析决策能力",
+            "自我驱动",
+            "学习能力",
+            "创新能力",
+            "适应能力",
+            "战略家素质"
+          ]
         },
-        "dimension_avg_score": 80.7
+        "dimension_avg_score": 4.3
       },
       {
-        "id": 206,
+        "id": 284,
         "dimension_template": "绩效",
-        "dimension_template_id": 9,
+        "dimension_template_id": 113,
         "dimension_template_label": 4,
         "total_topics_num": 0,
         "template_type": 2,
         "question": [],
-        "weight": 0,
+        "weight": 50,
         "question_competency": [],
-        "inventory_user_answers": 81.0,
+        "inventory_user_answers": 82.0,
         "ability_analysis": {
           "advantage": [],
           "medium": [],
           "to_be_improved": []
         },
-        "dimension_avg_score": 81.0,
+        "dimension_avg_score": 82.0,
         "scoring_method_type": 1
       }
     ],
     "inventory": {
-      "id": 115,
-      "name": "高星酒店总经理-2024年度人才盘点",
-      "age_list": ["30-35岁", "36-40岁", "41-45岁", "45-50岁", "50-60岁"],
-      "education_list": ["大专", "本科", "硕士"],
-      "job_year_list": ["1-3年", "4-6年", "7-9年", "10-12年"],
+      "id": 232,
+      "name": "20251215 iris test",
+      "age_list": [
+        "22-25",
+        "26-30",
+        "31-35",
+        "36-40",
+        "41-45",
+        "46+"
+      ],
+      "education_list": [
+        "初中",
+        "中专",
+        "高中",
+        "大专",
+        "本科",
+        "硕士",
+        "博士",
+        "其他"
+      ],
+      "job_year_list": [
+        "0-5",
+        "6-10",
+        "11-15",
+        "16-20",
+        "21+"
+      ],
       "level_list": [],
       "salary_list": [],
-      "year_in_company_list": ["0-1年", "1-3年", "3-5年", "5-10年", "10-15年", "15-20年"],
-      "question_num": 4,
+      "year_in_company_list": [
+        "0-5",
+        "6-10",
+        "11-15",
+        "16-20",
+        "21+"
+      ],
+      "question_num": 22,
       "is_edit_answer": false,
-      "cutscene_ai_avatar_url": "",
-      "cover_image_url": "",
+      "cutscene_ai_avatar_url": "https://user-video-staging.oss-cn-hangzhou.aliyuncs.com/ai-avatar-video/ai-avatar-cover-video-zh.mp4",
+      "cover_image_url": "https://user-video-staging.oss-cn-hangzhou.aliyuncs.com/ai-avatar-video/ai-avatar-cover-img-zh.png",
       "questions": [
         {
-          "id": 263,
-          "question_name": "为了提升能力，你是否愿意考虑平级调动、晋升或工作地点调动？",
+          "id": 659,
+          "question_name": "描述一次您如何调整战略计划以应对市场变化的情况。您是如何决定需要变更策略的？",
           "add_from": 0,
-          "competency_id": 162,
-          "competency_name": "职业流动性",
-          "competency_index": "3",
-          "competency": "职业流动性",
+          "competency_id": 211,
+          "competency_name": "战略家素质",
+          "competency_index": "2",
+          "competency": "战略家素质",
           "description": "",
-          "answer_type": 2,
-          "question_category": 4,
-          "answer_lang": "0",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
           "extra_info": "",
           "answer_content": null,
-          "media_url": "",
+          "media_url": null,
           "ai_avatar_url": null,
           "answer_time_min": 30,
           "answer_time_max": 180,
-          "competency_description": "",
-          "question_template_id": 4227
+          "competency_description": "个人在制定、实施和评估长远计划和策略时所展现的一系列能力、技能和特质。",
+          "question_template_id": 20031
         },
         {
-          "id": 260,
+          "id": 641,
+          "question_name": "在您的职业生涯中，请分享一次组织结构重大调整的情况，请谈谈您是如何适应这些变化，并确保团队的稳定和生产力的。您是如何与团队沟通这些变化，并帮助他们理解调整的必要性的？",
+          "add_from": 0,
+          "competency_id": 209,
+          "competency_name": "适应能力",
+          "competency_index": "0",
+          "competency": "适应能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人或组织在面对环境变化、新情况或挑战时，能够灵活调整自己的行为、策略和态度，以有效应对并成功适应这些变化的能力。",
+          "question_template_id": 20029
+        },
+        {
+          "id": 648,
+          "question_name": "请分享一个您如何为自己设定具有挑战性的目标，并成功实现这些目标的经历。您是如何保持动力并克服过程中的障碍的。",
+          "add_from": 0,
+          "competency_id": 206,
+          "competency_name": "自我驱动",
+          "competency_index": "3",
+          "competency": "自我驱动",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人在没有外部压力或激励的情况下，能够自发地设定目标、激发内在动力、采取行动并持续努力以实现这些目标的能力。",
+          "question_template_id": 20032
+        },
+        {
+          "id": 649,
+          "question_name": "请描述一个情况，您如何通过学习新的市场趋势或技术来调整战略规划？您是如何确保团队也同步更新知识和技能的？",
+          "add_from": 0,
+          "competency_id": 207,
+          "competency_name": "学习能力",
+          "competency_index": "4",
+          "competency": "学习能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人获取新知识、技能、理解概念、解决问题以及有效应用所学的能力。",
+          "question_template_id": 20033
+        },
+        {
+          "id": 650,
+          "question_name": "谈谈您如何鼓励和实施创意解决方案来应对特定挑战。您能提供一个具体的例子吗？结果如何？",
+          "add_from": 0,
+          "competency_id": 208,
+          "competency_name": "创新能力",
+          "competency_index": "5",
+          "competency": "创新能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人或组织在面对新情况、新问题时，能够产生新颖、有价值想法，并将其转化为实际应用或产品的能力。",
+          "question_template_id": 20034
+        },
+        {
+          "id": 655,
+          "question_name": "请描述一个情况，您如何通过学习新的市场趋势或技术来调整战略规划？您是如何确保团队也同步更新知识和技能的？",
+          "add_from": 0,
+          "competency_id": 207,
+          "competency_name": "学习能力",
+          "competency_index": "4",
+          "competency": "学习能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人获取新知识、技能、理解概念、解决问题以及有效应用所学的能力。",
+          "question_template_id": 20033
+        },
+        {
+          "id": 638,
+          "question_name": "请分享一个您如何为自己设定具有挑战性的目标，并成功实现这些目标的经历。您是如何保持动力并克服过程中的障碍的。",
+          "add_from": 0,
+          "competency_id": 206,
+          "competency_name": "自我驱动",
+          "competency_index": "3",
+          "competency": "自我驱动",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人在没有外部压力或激励的情况下，能够自发地设定目标、激发内在动力、采取行动并持续努力以实现这些目标的能力。",
+          "question_template_id": 20032
+        },
+        {
+          "id": 656,
+          "question_name": "谈谈您如何鼓励和实施创意解决方案来应对特定挑战。您能提供一个具体的例子吗？结果如何？",
+          "add_from": 0,
+          "competency_id": 208,
+          "competency_name": "创新能力",
+          "competency_index": "5",
+          "competency": "创新能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人或组织在面对新情况、新问题时，能够产生新颖、有价值想法，并将其转化为实际应用或产品的能力。",
+          "question_template_id": 20034
+        },
+        {
+          "id": 639,
+          "question_name": "请描述一个情况，您如何通过学习新的市场趋势或技术来调整战略规划？您是如何确保团队也同步更新知识和技能的？",
+          "add_from": 0,
+          "competency_id": 207,
+          "competency_name": "学习能力",
+          "competency_index": "4",
+          "competency": "学习能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人获取新知识、技能、理解概念、解决问题以及有效应用所学的能力。",
+          "question_template_id": 20033
+        },
+        {
+          "id": 640,
+          "question_name": "谈谈您如何鼓励和实施创意解决方案来应对特定挑战。您能提供一个具体的例子吗？结果如何？",
+          "add_from": 0,
+          "competency_id": 208,
+          "competency_name": "创新能力",
+          "competency_index": "5",
+          "competency": "创新能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人或组织在面对新情况、新问题时，能够产生新颖、有价值想法，并将其转化为实际应用或产品的能力。",
+          "question_template_id": 20034
+        },
+        {
+          "id": 642,
+          "question_name": "假设您面临一个决策，需要在维持现有服务水平和削减成本之间做出选择，以应对经济衰退对酒店业务的影响。请描述您将如何分析这一情况，并解释您最终的决策依据是什么？做了哪些？结果如何？",
+          "add_from": 0,
+          "competency_id": 118,
+          "competency_name": "分析决策能力",
+          "competency_index": "49",
+          "competency": "分析决策能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "经过一系列的步骤最终作出选择的能力。具体步骤：首先形成决策问题，包括提出方案和确定目标；其次判断自然状态及其概率；最后拟定多个可行方案，进行方案评价并作出选择。",
+          "question_template_id": 20030
+        },
+        {
+          "id": 643,
+          "question_name": "描述一次您如何调整战略计划以应对市场变化的情况。您是如何决定需要变更策略的？",
+          "add_from": 0,
+          "competency_id": 211,
+          "competency_name": "战略家素质",
+          "competency_index": "2",
+          "competency": "战略家素质",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人在制定、实施和评估长远计划和策略时所展现的一系列能力、技能和特质。",
+          "question_template_id": 20031
+        },
+        {
+          "id": 653,
+          "question_name": "描述一次您如何调整战略计划以应对市场变化的情况。您是如何决定需要变更策略的？",
+          "add_from": 0,
+          "competency_id": 211,
+          "competency_name": "战略家素质",
+          "competency_index": "2",
+          "competency": "战略家素质",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人在制定、实施和评估长远计划和策略时所展现的一系列能力、技能和特质。",
+          "question_template_id": 20031
+        },
+        {
+          "id": 657,
+          "question_name": "在您的职业生涯中，请分享一次组织结构重大调整的情况，请谈谈您是如何适应这些变化，并确保团队的稳定和生产力的。您是如何与团队沟通这些变化，并帮助他们理解调整的必要性的？",
+          "add_from": 0,
+          "competency_id": 209,
+          "competency_name": "适应能力",
+          "competency_index": "0",
+          "competency": "适应能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人或组织在面对环境变化、新情况或挑战时，能够灵活调整自己的行为、策略和态度，以有效应对并成功适应这些变化的能力。",
+          "question_template_id": 20029
+        },
+        {
+          "id": 658,
+          "question_name": "假设您面临一个决策，需要在维持现有服务水平和削减成本之间做出选择，以应对经济衰退对酒店业务的影响。请描述您将如何分析这一情况，并解释您最终的决策依据是什么？做了哪些？结果如何？",
+          "add_from": 0,
+          "competency_id": 118,
+          "competency_name": "分析决策能力",
+          "competency_index": "49",
+          "competency": "分析决策能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "经过一系列的步骤最终作出选择的能力。具体步骤：首先形成决策问题，包括提出方案和确定目标；其次判断自然状态及其概率；最后拟定多个可行方案，进行方案评价并作出选择。",
+          "question_template_id": 20030
+        },
+        {
+          "id": 654,
+          "question_name": "请分享一个您如何为自己设定具有挑战性的目标，并成功实现这些目标的经历。您是如何保持动力并克服过程中的障碍的。",
+          "add_from": 0,
+          "competency_id": 206,
+          "competency_name": "自我驱动",
+          "competency_index": "3",
+          "competency": "自我驱动",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人在没有外部压力或激励的情况下，能够自发地设定目标、激发内在动力、采取行动并持续努力以实现这些目标的能力。",
+          "question_template_id": 20032
+        },
+        {
+          "id": 651,
+          "question_name": "在您的职业生涯中，请分享一次组织结构重大调整的情况，请谈谈您是如何适应这些变化，并确保团队的稳定和生产力的。您是如何与团队沟通这些变化，并帮助他们理解调整的必要性的？",
+          "add_from": 0,
+          "competency_id": 209,
+          "competency_name": "适应能力",
+          "competency_index": "0",
+          "competency": "适应能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "个人或组织在面对环境变化、新情况或挑战时，能够灵活调整自己的行为、策略和态度，以有效应对并成功适应这些变化的能力。",
+          "question_template_id": 20029
+        },
+        {
+          "id": 652,
+          "question_name": "假设您面临一个决策，需要在维持现有服务水平和削减成本之间做出选择，以应对经济衰退对酒店业务的影响。请描述您将如何分析这一情况，并解释您最终的决策依据是什么？做了哪些？结果如何？",
+          "add_from": 0,
+          "competency_id": 118,
+          "competency_name": "分析决策能力",
+          "competency_index": "49",
+          "competency": "分析决策能力",
+          "description": "",
+          "answer_type": 3,
+          "question_category": 1,
+          "answer_lang": "zh",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": null,
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "经过一系列的步骤最终作出选择的能力。具体步骤：首先形成决策问题，包括提出方案和确定目标；其次判断自然状态及其概率；最后拟定多个可行方案，进行方案评价并作出选择。",
+          "question_template_id": 20030
+        },
+        {
+          "id": 647,
           "question_name": "以1-10分为标准，你对在这里的未来发展有多期待？",
           "add_from": 0,
-          "competency_id": 160,
+          "competency_id": 275,
           "competency_name": "未来期待",
           "competency_index": "1",
           "competency": "未来期待",
@@ -183,19 +712,30 @@
           "question_category": 4,
           "answer_lang": "0",
           "extra_info": "",
-          "answer_content": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+          "answer_content": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
           "media_url": "",
           "ai_avatar_url": null,
           "answer_time_min": 30,
           "answer_time_max": 180,
           "competency_description": "",
-          "question_template_id": 4224
+          "question_template_id": 20691
         },
         {
-          "id": 261,
+          "id": 646,
           "question_name": "如果能提高1分，关键因素会是什么？",
           "add_from": 0,
-          "competency_id": 160,
+          "competency_id": 275,
           "competency_name": "未来期待",
           "competency_index": "1",
           "competency": "未来期待",
@@ -210,13 +750,13 @@
           "answer_time_min": 30,
           "answer_time_max": 180,
           "competency_description": "",
-          "question_template_id": 4225
+          "question_template_id": 20692
         },
         {
-          "id": 262,
+          "id": 645,
           "question_name": "如果由你设计2-3年后的理想职位，它会是什么样？你希望发展哪些技能或积累哪些经验？",
           "add_from": 0,
-          "competency_id": 161,
+          "competency_id": 274,
           "competency_name": "职业兴趣",
           "competency_index": "2",
           "competency": "职业兴趣",
@@ -231,34 +771,80 @@
           "answer_time_min": 30,
           "answer_time_max": 180,
           "competency_description": "",
-          "question_template_id": 4226
+          "question_template_id": 20693
+        },
+        {
+          "id": 644,
+          "question_name": "为了提升能力，你是否愿意考虑平级调动、晋升或工作地点调动？",
+          "add_from": 0,
+          "competency_id": 273,
+          "competency_name": "职业流动性",
+          "competency_index": "3",
+          "competency": "职业流动性",
+          "description": "",
+          "answer_type": 2,
+          "question_category": 4,
+          "answer_lang": "0",
+          "extra_info": "",
+          "answer_content": null,
+          "media_url": "",
+          "ai_avatar_url": null,
+          "answer_time_min": 30,
+          "answer_time_max": 180,
+          "competency_description": "",
+          "question_template_id": 20694
         }
-      ]
+      ],
+      "company_tenant_id": 1
     },
     "evaluate_dimension_avg_score": [
       {
         "label": 1,
         "competencies": [
           {
-            "dimension_weight": 100,
-            "artificial_weight": 0.0,
-            "competency": "自我驱动",
+            "dimension_weight": 50,
+            "artificial_weight": 50.0,
+            "competency": "适应能力",
             "star": null,
             "score": 0,
             "weight_score": 0
           },
           {
-            "dimension_weight": 100,
-            "artificial_weight": 0.0,
+            "dimension_weight": 50,
+            "artificial_weight": 50.0,
             "competency": "学习能力",
             "star": null,
             "score": 0,
             "weight_score": 0
           },
           {
-            "dimension_weight": 100,
-            "artificial_weight": 0.0,
+            "dimension_weight": 50,
+            "artificial_weight": 50.0,
+            "competency": "分析决策能力",
+            "star": null,
+            "score": 0,
+            "weight_score": 0
+          },
+          {
+            "dimension_weight": 50,
+            "artificial_weight": 50.0,
+            "competency": "自我驱动",
+            "star": null,
+            "score": 0,
+            "weight_score": 0
+          },
+          {
+            "dimension_weight": 50,
+            "artificial_weight": 50.0,
             "competency": "创新能力",
+            "star": null,
+            "score": 0,
+            "weight_score": 0
+          },
+          {
+            "dimension_weight": 50,
+            "artificial_weight": 50.0,
+            "competency": "战略家素质",
             "star": null,
             "score": 0,
             "weight_score": 0
@@ -267,80 +853,117 @@
       }
     ],
     "form_ability_analysis": {
-      "advantage": [
+      "advantage": [],
+      "medium": [],
+      "to_be_improved": [
+        {
+          "name": "分析决策能力",
+          "suggestions": "鼓励候选人参加决策制定工作坊或培训课程，以增强分析技能。建议候选人在低风险情境下练习决策制定，以建立信心并完善决策流程。提倡候选人寻求经验丰富的同事的指导，学习他们的分析方法和决策策略。"
+        },
         {
           "name": "自我驱动",
-          "suggestions": "通过设定与公司目标一致的个人目标，继续培养积极主动的态度。通过分享个人策略和经验，鼓励团队成员发展自我驱动能力。寻求进一步的职业发展机会，以保持高水平的自我驱动力和领导力。"
+          "suggestions": "鼓励候选人设定与项目目标一致的个人目标，以培养目的感和驱动力。为候选人提供承担额外责任的机会，以建立在其角色中的自信和自主性。实施定期检查，讨论进展并提供建设性反馈，这可以帮助候选人更好地了解自己的优势和改进领域。"
         },
         {
           "name": "学习能力",
-          "suggestions": "考虑参与持续的职业发展课程，以跟上行业进步的步伐。鼓励参加工作坊和研讨会，以拓宽知识和技能。实施导师计划，以促进从经验丰富的同事那里学习。"
+          "suggestions": "鼓励候选人参与持续学习，提供相关培训项目和资源。实施导师计划，让候选人能够从更有经验的同事那里学习，以加快他们的学习曲线。设定清晰可实现的学习目标，并提供定期反馈，帮助候选人了解他们的进步和改进领域。"
         },
         {
           "name": "创新能力",
-          "suggestions": "继续培养创新文化，鼓励探索新的想法和方法。投资于专业发展机会，专注于增强创造性思维和解决问题的能力。实施一个系统来捕捉和评估创新想法，确保它们被考虑并有可能被实施。"
+          "suggestions": "鼓励候选人参加专注于创新和创造性思维的研讨会和培训课程，以建立更坚实的基础。分配候选人到需要跳出常规思维和解决问题的项目中，挑战并发展他们的创新技能。提供定期反馈和指导，帮助候选人了解他们的改进领域以及如何在他们的工作中应用创新策略。"
+        },
+        {
+          "name": "适应能力",
+          "suggestions": "鼓励候选人参与团队建设活动，以增强其在动态环境中工作的能力。为候选人提供跨职能培训的机会，以扩大其技能范围并提高适应能力。实施定期反馈会议，帮助候选人识别弱点并制定个人成长策略。"
+        },
+        {
+          "name": "战略家素质",
+          "suggestions": "鼓励候选人参加战略规划研讨会或课程，以增强他们对战略框架和工具的理解。分配候选人参与需要战略思维的项目，以获得实践经验并提高他们的战略能力。提供定期反馈和指导，帮助候选人识别改进领域并培养更具战略性的思维模式。"
         }
-      ],
-      "medium": [],
-      "to_be_improved": []
+      ]
     },
-    "ai_avg_score": 80.7,
-    "total_weight_avg_score": 80.7,
-    "dimension_total_weight_avg_score_exclude_performance": 80.7,
-    "dimension_total_avg_score_exclude_performance": 80.7,
+    "ai_avg_score": 7.7,
+    "total_weight_avg_score": 21.6,
+    "dimension_total_weight_avg_score_exclude_performance": 1.1,
+    "dimension_total_avg_score_exclude_performance": 4.3,
     "every_dimension_weight_avg_score": {
       "ability": 0,
-      "potential": 80.67,
-      "performance": 81.0,
+      "potential": 1.08,
+      "performance": 41.0,
       "cultural_value": 0,
       "custom": 0
     },
     "box_9": {
       "ability_performance": null,
-      "potential_performance": "back_bone"
+      "potential_performance": "super_star"
     },
-    "performance_avg": [81.0, 1],
+    "performance_avg": [
+      82.0,
+      1
+    ],
     "inventory_big5_avg_score": {
-      "c": 47.7,
-      "o": 47.7,
-      "e": 47.7,
-      "n": 47.7,
-      "a": 47.7
+      "c": 40.3,
+      "o": 61.3,
+      "e": 51.0,
+      "n": 43.3,
+      "a": 70.3
     },
-    "evaluate_data": [],
+    "evaluate_data": [
+      {
+        "role": 1,
+        "evaluation": null,
+        "competencies": []
+      },
+      {
+        "role": 0,
+        "evaluation": null,
+        "competencies": []
+      }
+    ],
     "grid_data": {
       "x": {
-        "score": 81.0,
+        "score": 82.0,
         "name": "绩效",
         "level": "Mid"
       },
       "y": {
-        "score": 80.67,
+        "score": 1.08,
         "name": "潜力",
-        "level": "Mid"
+        "level": "Low"
       },
-      "index": 5,
-      "loss_impact": "Moderate-High",
-      "description": "团队的中坚力量，表现均衡",
-      "title": "中坚力量",
-      "recommendation": "建议提供更多挑战性工作"
+      "index": 7,
+      "loss_impact": "Low",
+      "description": "特质：绩效合格，但可能已达到职业潜力上限；尝试辅导员工变得更富创新性，侧重于横向思维。",
+      "title": "合格执行者",
+      "recommendation": "管理举措：确保绩效稳定；优化现岗配置；提供创新思维培训与职业辅导。"
     },
     "cdpa_data": [
       {
-        "id": 788,
+        "id": 4494,
         "body": "8",
-        "question_id": 260,
+        "question_id": 647,
         "question_name": "以1-10分为标准，你对在这里的未来发展有多期待？",
         "question_type": 0,
         "competency_key": "retention",
-        "answer_content": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        "answer_content": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
         "answer_type": 0,
         "level": "低风险"
       },
       {
-        "id": 789,
-        "body": "I'm a hard worker, I always try to do my best to achieve my goals and make a positive impact on the world.",
-        "question_id": 261,
+        "id": 4495,
+        "body": "薪资",
+        "question_id": 646,
         "question_name": "如果能提高1分，关键因素会是什么？",
         "question_type": 0,
         "competency_key": "retention",
@@ -349,9 +972,9 @@
         "level": ""
       },
       {
-        "id": 790,
-        "body": "I'm a hard worker, I always try to do my best to achieve my goals and make a positive impact on the world.",
-        "question_id": 262,
+        "id": 4496,
+        "body": "薪资",
+        "question_id": 645,
         "question_name": "如果由你设计2-3年后的理想职位，它会是什么样？你希望发展哪些技能或积累哪些经验？",
         "question_type": 0,
         "competency_key": "career_interests",
@@ -360,9 +983,9 @@
         "level": ""
       },
       {
-        "id": 787,
-        "body": "I'm a hard worker, I always try to do my best to achieve my goals and make a positive impact on the world.",
-        "question_id": 263,
+        "id": 4497,
+        "body": "薪资",
+        "question_id": 644,
         "question_name": "为了提升能力，你是否愿意考虑平级调动、晋升或工作地点调动？",
         "question_type": 0,
         "competency_key": "mobility",
@@ -371,24 +994,28 @@
         "level": ""
       }
     ],
-    "create_time": "2024-12-05 11:07:47",
-    "fix_time": "2024-12-19 11:04:07",
-    "submitted_num": 3,
-    "not_submitted_num": 3,
-    "applied_time": "2024-12-05 11:11:20",
-    "invite_code": "2ZRkH1",
-    "invite_expire_time": "2024-12-08 23:59:59",
+    "report_summary": {
+      "en": "The candidate exhibits areas of soft skills that require significant development, particularly in adaptability, strategic acumen, self-motivation, learning ability, innovation, and analytical decision-making. These areas are crucial for the success of the 20251215 iris test project. While the candidate shows foundational skills, there is a notable need for improvement to meet project demands effectively. Encouraging participation in team-building, strategic workshops, continuous learning opportunities, and mentorship can help address these gaps. The candidate's future performance may be hindered without addressing these areas, posing risks to project efficiency and innovation.",
+      "zh": "候选人在适应能力、战略家素质、自我驱动、学习能力、创新能力和分析决策能力等方面显示出需要显著发展的软技能。这些领域对于20251215 iris test项目的成功至关重要。虽然候选人展示了基础技能，但为了有效满足项目需求，有明显的改进需求。鼓励参与团队建设、战略研讨会、持续学习机会和导师指导可以帮助解决这些差距。如果不解决这些领域，候选人的未来表现可能会受到阻碍，对项目效率和创新构成风险。"
+    },
+    "create_time": "2025-12-15 17:34:41",
+    "fix_time": "2025-12-16 16:21:53",
+    "submitted_num": 10,
+    "not_submitted_num": 12,
+    "applied_time": "2025-12-15 18:00:53",
+    "invite_code": "1ksdJ3",
+    "invite_expire_time": "2025-12-21 23:59:59",
     "status": 2,
     "ai_report_status": 4,
     "ai_report_index": 0,
-    "stat_gender": 0,
-    "stat_age": "30-35岁",
-    "stat_education": "本科",
-    "stat_job_year": "1-3年",
+    "stat_gender": 1,
+    "stat_age": "22-25",
+    "stat_education": "博士",
+    "stat_job_year": "0-5",
     "stat_level": null,
     "stat_company_years": null,
     "stat_salary": null,
-    "stat_year_in_company": "1-3年",
+    "stat_year_in_company": "0-5",
     "leapin_score": 0,
     "total_score": null,
     "rank": null,
@@ -400,14 +1027,14 @@
     "is_submit": true,
     "tag_of_parse_by_llm": true,
     "is_parsing_competency": false,
-    "parsed_competency_time": "2024-12-12 09:36:27",
+    "parsed_competency_time": "2025-12-16 16:21:53",
     "share_report_url": null,
     "big_five_score": {
-      "a": 55.0,
-      "c": 55.0,
-      "e": 55.0,
-      "n": 55.0,
-      "o": 55.0
+      "a": 70,
+      "c": 40,
+      "e": 48,
+      "n": 46,
+      "o": 59
     },
     "question_score": {
       "q_0": 0,
@@ -417,13 +1044,12 @@
       "q_4": 0
     },
     "total_question_score": null,
-    "ai_total_score": 80.7,
-    "artificial_total_score": null,
+    "ai_total_score": 1.1,
+    "artificial_total_score": 0.0,
     "artificial_avg_score": null,
-    "final_avg_score": 80.7,
-    "is_predicted": false,
-    "app_user": 100,
-    "contact_user": 373
-  },
-  "error_msg": ""
+    "final_avg_score": 42.1,
+    "is_predicted": true,
+    "app_user": 309,
+    "contact_user": 103
+  }
 }

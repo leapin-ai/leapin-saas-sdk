@@ -104,33 +104,11 @@ const Summary = createWithRemoteLoader({
                 <div className={style['card-box-grey-content']}>{get(data, 'grid_data.recommendation')}</div>
               </Flex>
             )}
-            {strength && strength.length > 0 && (
+            {get(data, 'report_summary') && (
               <Flex vertical gap={4}>
-                <div className={style['card-box-grey-title']}>{formatMessage({ id: 'strength' })}</div>
+                <div className={style['card-box-grey-title']}>{formatMessage({ id: 'summary' })}</div>
                 <Flex className={style['card-box-grey-content']} vertical gap={12}>
-                  {strength.map(({ name, suggestions }, index) => {
-                    return (
-                      <Flex key={index} align="flex-start">
-                        <StateTag type="info" text={name} />
-                        <div>{suggestions}</div>
-                      </Flex>
-                    );
-                  })}
-                </Flex>
-              </Flex>
-            )}
-            {improvement && improvement.length > 0 && (
-              <Flex vertical gap={4}>
-                <div className={style['card-box-grey-title']}>{formatMessage({ id: 'improvement' })}</div>
-                <Flex className={style['card-box-grey-content']} vertical gap={12}>
-                  {improvement.map(({ name, suggestions }, index) => {
-                    return (
-                      <Flex key={index} align="flex-start">
-                        <StateTag type="info" text={name} />
-                        <div>{suggestions}</div>
-                      </Flex>
-                    );
-                  })}
+                  {get(data, `report_summary[${locale === 'en-US' ? 'en' : 'zh'}]`)}
                 </Flex>
               </Flex>
             )}
