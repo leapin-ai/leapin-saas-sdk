@@ -1,3 +1,5 @@
+@Library(['leapin-pipeline']) _
+
 def build_command = "npm run build"
 if (env.BRANCH_NAME == 'master') {
     build_command = "npm run build"
@@ -11,7 +13,7 @@ standardPipeline {
         sh "${build_command}"
     }
     preBuildCommand = {
-        sh "npm config set registry https://registry.npmmirror.com && npm install"
+        sh "npm install"
     }
     nodeVersion = "20.15.0"
     buildLocalPath = "build"
