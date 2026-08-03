@@ -2,6 +2,7 @@ import RemoteModule from '@kne/remote-loader';
 import RecruitmentChannel from '@components/RecruitmentChannel';
 import InventoryReport, { InventoryReportButton, ShareInventoryReport, DownloadReportButton } from '@components/InventoryReport';
 import NineSquareGrid, { NineSquareGridEditor } from '@components/NineSquareGrid';
+import ChatBot from '@components/ChatBot';
 import { Empty, ConfigProvider } from 'antd';
 import { useRef } from 'react';
 import './index.scss';
@@ -14,7 +15,8 @@ const typeMapping = {
   NineSquareGrid,
   NineSquareGridEditor,
   NineSquareGridEditorField: NineSquareGridEditor.Field,
-  DownloadReportButton
+  DownloadReportButton,
+  ChatBot
 };
 
 const App = ({ globalPreset, themeToken, options }) => {

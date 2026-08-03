@@ -1,0 +1,212 @@
+@use '~@kne/responsive-utils/scss' as resp;
+
+/**
+ * 示例 / 宿主舞台：相对定位 + 最小高度，PC 示例才能看见右下角浮球。
+ * 手机预览下占满设备高度。生产环境可通过 CSS 变量覆盖最小高度。
+ */
+.root {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--leapin-saas-sdk-chatbot-stage-min-height, 560px);
+  height: 100%;
+  pointer-events: none;
+  z-index: 1100;
+}
+
+@include resp.mobile-container {
+  .root {
+    min-height: var(--kne-viewport-height, 100dvh);
+    height: var(--kne-viewport-height, 100dvh);
+  }
+}
+
+.float-wrap {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  isolation: isolate;
+  overflow: visible;
+  touch-action: manipulation;
+  cursor: grab;
+  user-select: none;
+  border-radius: 50%;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 20%, color-mix(in srgb, #0061f2 22%, transparent) 0%, transparent 48%),
+      radial-gradient(circle at 82% 22%, color-mix(in srgb, #7d9aff 18%, transparent) 0%, transparent 50%),
+      radial-gradient(circle at 50% 88%, color-mix(in srgb, #ff7ad2 20%, transparent) 0%, transparent 52%);
+    filter: blur(12px);
+    opacity: 0.45;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow:
+      0 0 12px -2px color-mix(in srgb, #0061f2 35%, transparent),
+      0 0 20px -4px color-mix(in srgb, #ff7ad2 30%, transparent),
+      0 0 28px -8px color-mix(in srgb, #7d9aff 22%, transparent);
+    opacity: 0.7;
+  }
+
+  &.is-dragging {
+    cursor: grabbing;
+    touch-action: none;
+  }
+}
+
+.float-button {
+  overflow: hidden;
+  pointer-events: none;
+  position: relative !important;
+  inset: auto !important;
+  inset-inline-end: auto !important;
+  inset-block-end: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: 1 !important;
+  width: 40px !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, #0061f2 10%, transparent),
+    0 0 12px -4px color-mix(in srgb, #0061f2 28%, transparent),
+    0 0 20px -6px color-mix(in srgb, #ff7ad2 22%, transparent) !important;
+}
+
+.tips {
+  position: absolute;
+  z-index: 2;
+  pointer-events: auto;
+  max-width: 220px;
+  padding: 8px 12px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.88);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.panel {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--modal-height);
+  min-height: var(--min-modal-height);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.react-bot {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: var(--modal-height) !important;
+  min-height: var(--min-modal-height) !important;
+  overflow: hidden !important;
+
+  :global {
+    .ant-splitter {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .ant-splitter-panel {
+      min-width: 0 !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      overflow: hidden !important;
+    }
+
+    .ant-splitter-panel > * {
+      box-sizing: border-box;
+      flex: 1 1 auto;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      height: 100% !important;
+      overflow: hidden !important;
+    }
+
+    .ant-splitter > .ant-splitter-panel:first-child > *,
+    .react-bot-side-panel-scroller {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      height: 100% !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      box-sizing: border-box !important;
+    }
+
+    .react-bot-message-list-scroller {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      box-sizing: border-box !important;
+
+      * {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .ant-flex {
+        min-width: 0 !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+.job-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.role-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
