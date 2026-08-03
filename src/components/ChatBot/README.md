@@ -103,7 +103,6 @@ leapinSaasSdk(el, {
 | ---- | ------ | ---- |
 | `--leapin-saas-sdk-chatbot-width` | `1000px` | 弹窗宽度 |
 | `--leapin-saas-sdk-chatbot-height` | `720px` | 弹窗高度 |
-| `--leapin-saas-sdk-chatbot-stage-min-height` | `560px` | 浮球舞台最小高度（PC 示例容器需有高度才能看见浮球） |
 | `--leapin-saas-sdk-chatbot-bottom` | `120px` | 悬浮球默认距底（无缓存或复位时） |
 | `--leapin-saas-sdk-chatbot-right` | `40px` | 悬浮球默认距右（无缓存或复位时） |
 

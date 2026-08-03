@@ -1,24 +1,10 @@
-@use '~@kne/responsive-utils/scss' as resp;
-
-/**
- * 示例 / 宿主舞台：相对定位 + 最小高度，PC 示例才能看见右下角浮球。
- * 手机预览下占满设备高度。生产环境可通过 CSS 变量覆盖最小高度。
- */
 .root {
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: var(--leapin-saas-sdk-chatbot-stage-min-height, 560px);
   height: 100%;
   pointer-events: none;
   z-index: 1100;
-}
-
-@include resp.mobile-container {
-  .root {
-    min-height: var(--kne-viewport-height, 100dvh);
-    height: var(--kne-viewport-height, 100dvh);
-  }
 }
 
 .float-wrap {
