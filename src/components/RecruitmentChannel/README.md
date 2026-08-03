@@ -1,6 +1,4 @@
-
 # RecruitmentChannel
-
 
 ### 概述
 
@@ -54,7 +52,6 @@ const BaseExample = () => {
 render(<BaseExample />);
 
 ```
-
 
 ### API
 
@@ -129,4 +126,3 @@ const App = () => {
 3. 渠道logo建议使用合适尺寸的图片，以确保良好的显示效果
 4. 禁用的渠道会显示禁用状态，并且不可点击
 5. 可以通过className和style属性自定义组件的外观
-

@@ -1,0 +1,16 @@
+{
+  "isFull": true,
+  "list": [
+    {
+      "title": "悬浮球对话",
+      "description": "右下角悬浮球打开 ReactBot 弹窗，对接 rag-chatbot（baseUrl / chatId / token 由 options 传入）",
+      "code": "./base.js",
+      "scope": [
+        {
+          "name": "_ChatBot",
+          "packageName": "@components/ChatBot"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,4 @@
-
 # InventoryReport
-
 
 ### 概述
 
@@ -97,7 +95,6 @@ render(<BaseExample />);
 
 ```
 
-
 ### API
 
 ### InventoryReport 组件
@@ -124,4 +121,3 @@ render(<BaseExample />);
 | className | 自定义类名 | string | - |
 | style | 自定义样式 | object | - |
 | disabled | 是否禁用 | boolean | false |
-
