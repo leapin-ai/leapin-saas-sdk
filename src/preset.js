@@ -172,6 +172,24 @@ export const globalInit = async () => {
           });
 
           const targetFileName = `${md5Hash}.${file.name.split('.').pop()}`;
+          const objectKey = `${ensureSlash(ossConfig.dir, true)}${targetFileName}`;
+          // 【原理解释】AP 返回 provider=aws，字段与 OSS 不同，需按云厂商组装表单
+          const isAws = ossConfig.provider === 'aws';
+          const formData = isAws
+            ? Object.assign({}, ossConfig.fields || {}, {
+                key: objectKey,
+                success_action_status: 201,
+                file
+              })
+            : {
+                key: objectKey,
+                'x-oss-object-acl': 'public-read',
+                policy: ossConfig.policy,
+                OSSAccessKeyId: ossConfig.OSSAccessKeyId,
+                signature: ossConfig.Signature,
+                success_action_status: 201,
+                file
+              };
 
           const { data: uploadRes } = await ajax.postForm(
             Object.assign(
@@ -179,15 +197,7 @@ export const globalInit = async () => {
               {
                 url: ossConfig.host,
                 showError: false,
-                data: {
-                  key: `${ensureSlash(ossConfig.dir, true)}${targetFileName}`,
-                  'x-oss-object-acl': 'public-read',
-                  policy: ossConfig.policy,
-                  OSSAccessKeyId: ossConfig.OSSAccessKeyId,
-                  signature: ossConfig.Signature,
-                  success_action_status: 201,
-                  file
-                }
+                data: formData
               }
             )
           );
